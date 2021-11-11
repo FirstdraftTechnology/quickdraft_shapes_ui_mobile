@@ -74,6 +74,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
+                //Temp comment
                 set_someMore_params();
 
                 Intent intent = new Intent(context, TransmitRectangleActivity.class);
