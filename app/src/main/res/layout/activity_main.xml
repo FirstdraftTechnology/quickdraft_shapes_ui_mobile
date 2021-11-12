@@ -50,7 +50,7 @@
             android:layout_marginTop="5dp"
             />
 
-        <EditText
+        <!--EditText
             android:id="@+id/ShapeFileName"
             android:layout_height="50dp"
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" /!-->
 
         <Button
             android:id="@+id/TransmitShape"
