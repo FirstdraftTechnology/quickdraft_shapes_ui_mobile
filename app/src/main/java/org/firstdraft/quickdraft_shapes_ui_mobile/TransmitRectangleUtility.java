@@ -13,15 +13,17 @@ public class TransmitRectangleUtility {
     static int canvas_width;
     static int canvas_height;
 
-    static float base_width;
+    /*static float base_width;
     static float base_height;
     static float horizontal_deviation;
 
-    static String shape_text;
+    static String shape_text;*/
+
+    static ShapeElementTag set_class_variable;
 
     public static XmlSerializer serializer;
 
-    static void create_shape_element(XmlSerializer serializer,
+    /*static void create_shape_element(XmlSerializer serializer,
                                      float base_width, float base_height,
                                      float horizontal_deviation, String shape_text)
             throws Exception
@@ -37,6 +39,38 @@ public class TransmitRectangleUtility {
         serializer.text(shape_text);
 
         serializer.endTag("", "shape_element");
+
+    }*/
+
+    static void create_shape_element_wrapper(XmlSerializer serializer/*,
+                                     float base_width, float base_height,
+                                     float horizontal_deviation, String shape_text*/)
+            throws Exception
+    {
+        /*ShapeElementTag set = new ShapeElementTag();
+
+        set.base_width = base_width;
+        set.base_height = base_height;
+
+        set.horizontal_deviation  = horizontal_deviation;
+        set.shape_text = shape_text;*/
+
+        set_class_variable.create_shape_element(serializer);
+
+    }
+
+    static void add_shape_element(float base_width, float base_height,
+                                  float horizontal_deviation, String shape_text)
+    {
+        ShapeElementTag set = new ShapeElementTag();
+
+        set.base_width = base_width;
+        set.base_height = base_height;
+
+        set.horizontal_deviation  = horizontal_deviation;
+        set.shape_text = shape_text;
+
+        set_class_variable = set;
 
     }
 
@@ -71,9 +105,7 @@ public class TransmitRectangleUtility {
 
             serializer.endTag("", "shape_element");*/
 
-            create_shape_element(serializer,
-                                    base_width, base_height,
-                                    horizontal_deviation, shape_text);
+            create_shape_element_wrapper(serializer);
 
             serializer.endTag("", "shape");
             serializer.endTag("", "root");
