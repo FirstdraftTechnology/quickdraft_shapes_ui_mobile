@@ -19,7 +19,7 @@ public class TransmitRectangleUtility {
 
     static String shape_text;*/
 
-    static ShapeElementTag set_class_variable;
+    static ShapeElementTag set_class_variable[];
 
     public static XmlSerializer serializer;
 
@@ -55,13 +55,14 @@ public class TransmitRectangleUtility {
         set.horizontal_deviation  = horizontal_deviation;
         set.shape_text = shape_text;*/
 
-        set_class_variable.create_shape_element(serializer);
+        set_class_variable[0].create_shape_element(serializer);
 
     }
 
     static void add_shape_element(float base_width, float base_height,
                                   float horizontal_deviation, String shape_text)
     {
+
         ShapeElementTag set = new ShapeElementTag();
 
         set.base_width = base_width;
@@ -70,7 +71,8 @@ public class TransmitRectangleUtility {
         set.horizontal_deviation  = horizontal_deviation;
         set.shape_text = shape_text;
 
-        set_class_variable = set;
+        set_class_variable = new ShapeElementTag[1];
+        set_class_variable[0] = set;
 
     }
 
