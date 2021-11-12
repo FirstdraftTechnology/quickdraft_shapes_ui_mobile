@@ -21,6 +21,25 @@ public class TransmitRectangleUtility {
 
     public static XmlSerializer serializer;
 
+    static void create_shape_element(XmlSerializer serializer,
+                                     float base_width, float base_height,
+                                     float horizontal_deviation, String shape_text)
+            throws Exception
+    {
+
+        serializer.startTag("", "shape_element");
+
+        serializer.attribute("", "base_width", Float.toString(base_width));
+        serializer.attribute("", "base_height", Float.toString(base_height));
+        serializer.attribute("", "horizontal_deviation",
+                                                        Float.toString(horizontal_deviation));
+
+        serializer.text(shape_text);
+
+        serializer.endTag("", "shape_element");
+
+    }
+
     static String get_xml()
     {
         StringWriter writer = new StringWriter();
@@ -41,7 +60,7 @@ public class TransmitRectangleUtility {
             serializer.attribute("", "canvas_height",
                     Integer.toString(TransmitRectangleUtility.canvas_height));
 
-            serializer.startTag("", "shape_element");
+            /*serializer.startTag("", "shape_element");
 
             serializer.attribute("", "base_width", Float.toString(base_width));
             serializer.attribute("", "base_height", Float.toString(base_height));
@@ -50,7 +69,11 @@ public class TransmitRectangleUtility {
 
             serializer.text(shape_text);
 
-            serializer.endTag("", "shape_element");
+            serializer.endTag("", "shape_element");*/
+
+            create_shape_element(serializer,
+                                    base_width, base_height,
+                                    horizontal_deviation, shape_text);
 
             serializer.endTag("", "shape");
             serializer.endTag("", "root");
