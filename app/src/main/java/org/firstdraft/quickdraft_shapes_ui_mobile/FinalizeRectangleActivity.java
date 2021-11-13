@@ -41,6 +41,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         //user_name_view = (TextView) findViewById(R.id.UserName);
 
         Button transmit_button = (Button) findViewById(R.id.TransmitShape);
+        Button append_button = (Button) findViewById(R.id.AppendShape);
 
         shape_text_view.setText(RectangleView.s);
         //file_name_view.setText(RectangleView.file_name);
@@ -77,7 +78,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 //Temp comment
                 set_someMore_params();
 
-                //Later move it to add_shape button
+                //Adding final shape
                 TransmitRectangleUtility.add_shape_element();
 
                 //Temp code for testing without UI
@@ -90,6 +91,20 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 TransmitRectangleUtility.add_shape_element();*/
 
                 Intent intent = new Intent(context, TransmitRectangleActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        append_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                TransmitRectangleUtility.add_shape_element();
+                RectangleView.s = "";
+
+                Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
 
             }
