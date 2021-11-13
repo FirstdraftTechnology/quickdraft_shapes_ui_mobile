@@ -13,13 +13,14 @@ public class TransmitRectangleUtility {
     static int canvas_width;
     static int canvas_height;
 
-    /*static float base_width;
+    static float base_width;
     static float base_height;
     static float horizontal_deviation;
 
-    static String shape_text;*/
+    static String shape_text;
 
-    static ShapeElementTag set_class_variable[];
+    static ShapeElementTag set_array[];
+    static int set_count = 0;
 
     public static XmlSerializer serializer;
 
@@ -55,12 +56,12 @@ public class TransmitRectangleUtility {
         set.horizontal_deviation  = horizontal_deviation;
         set.shape_text = shape_text;*/
 
-        set_class_variable[0].create_shape_element(serializer);
+        set_array[0].create_shape_element(serializer);
 
     }
 
-    static void add_shape_element(float base_width, float base_height,
-                                  float horizontal_deviation, String shape_text)
+    static void add_shape_element(/*float base_width, float base_height,
+                                  float horizontal_deviation, String shape_text*/)
     {
 
         ShapeElementTag set = new ShapeElementTag();
@@ -71,8 +72,21 @@ public class TransmitRectangleUtility {
         set.horizontal_deviation  = horizontal_deviation;
         set.shape_text = shape_text;
 
-        set_class_variable = new ShapeElementTag[1];
-        set_class_variable[0] = set;
+        int current_len = set_count;
+
+        //set_array = new ShapeElementTag[1];
+        //set_array[0] = set;
+
+        ShapeElementTag newarr[] = new ShapeElementTag[current_len + 1];
+
+        for (int i = 0; i < current_len; i++) {
+                newarr[i] = set_array[i];
+        }
+
+        newarr[current_len] = set;
+
+        set_array = newarr;
+        set_count++;
 
     }
 

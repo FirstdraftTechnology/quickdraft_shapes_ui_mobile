@@ -63,14 +63,14 @@ public class RectangleView
     private void set_params()
     {
 
-        /*TransmitRectangleUtility.base_width = RECTANGLE_BASE_WIDTH;
+        TransmitRectangleUtility.base_width = RECTANGLE_BASE_WIDTH;
         TransmitRectangleUtility.base_height = RECTANGLE_BASE_HEIGHT;
         TransmitRectangleUtility.horizontal_deviation = text_width;
 
-        TransmitRectangleUtility.shape_text = s;*/
+        TransmitRectangleUtility.shape_text = s;
 
-        TransmitRectangleUtility.add_shape_element(RECTANGLE_BASE_WIDTH, RECTANGLE_BASE_HEIGHT,
-                                                    text_width, s);
+        /*TransmitRectangleUtility.add_shape_element(RECTANGLE_BASE_WIDTH, RECTANGLE_BASE_HEIGHT,
+                                                    text_width, s);*/
 
         TransmitRectangleUtility.canvas_width = this.getWidth();
         TransmitRectangleUtility.canvas_height = this.getHeight();

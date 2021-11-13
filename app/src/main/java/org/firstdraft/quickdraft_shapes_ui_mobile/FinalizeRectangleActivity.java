@@ -77,6 +77,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 //Temp comment
                 set_someMore_params();
 
+                //Later move it to add_shape button
+                TransmitRectangleUtility.add_shape_element();
+
                 Intent intent = new Intent(context, TransmitRectangleActivity.class);
                 startActivity(intent);
 

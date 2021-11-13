@@ -43,6 +43,9 @@ public class UserFileNameActivity extends AppCompatActivity {
                 TransmitRectangleUtility.user_name = user_name_view.getText().toString();
                 TransmitRectangleUtility.file_name = file_name_view.getText().toString();
 
+                //Temp
+                TransmitRectangleUtility.set_count = 0;
+
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
 
