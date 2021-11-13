@@ -43,11 +43,11 @@ public class TransmitRectangleActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        Log.d("SHAPES","Width - " + TransmitRectangleUtility.base_width);
+        /*Log.d("SHAPES","Width - " + TransmitRectangleUtility.base_width);
         Log.d("SHAPES","Height - " + TransmitRectangleUtility.base_height);
         Log.d("SHAPES","Deviation - " + TransmitRectangleUtility.horizontal_deviation);
 
-        Log.d("SHAPES","Text - " + TransmitRectangleUtility.shape_text);
+        Log.d("SHAPES","Text - " + TransmitRectangleUtility.shape_text);*/
 
         String xml = TransmitRectangleUtility.get_xml();
         Log.d("SHAPES","XML - " + TransmitRectangleUtility.get_xml());
