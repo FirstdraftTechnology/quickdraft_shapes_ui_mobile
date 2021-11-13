@@ -13,11 +13,11 @@ public class TransmitRectangleUtility {
     static int canvas_width;
     static int canvas_height;
 
-    static float base_width;
+    /*static float base_width;
     static float base_height;
     static float horizontal_deviation;
 
-    static String shape_text;
+    static String shape_text;*/
 
     static ShapeElementTag set_array[];
     static int set_count = 0;
@@ -66,11 +66,11 @@ public class TransmitRectangleUtility {
 
         ShapeElementTag set = new ShapeElementTag();
 
-        set.base_width = base_width;
-        set.base_height = base_height;
+        set.base_width = CurrentShapeElement.base_width;
+        set.base_height = CurrentShapeElement.base_height;
 
-        set.horizontal_deviation  = horizontal_deviation;
-        set.shape_text = shape_text;
+        set.horizontal_deviation  = CurrentShapeElement.horizontal_deviation;
+        set.shape_text = CurrentShapeElement.shape_text;
 
         int current_len = set_count;
 
