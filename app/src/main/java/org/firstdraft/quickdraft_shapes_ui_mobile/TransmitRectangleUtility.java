@@ -56,7 +56,12 @@ public class TransmitRectangleUtility {
         set.horizontal_deviation  = horizontal_deviation;
         set.shape_text = shape_text;*/
 
-        set_array[0].create_shape_element(serializer);
+        //set_array[0].create_shape_element(serializer);
+
+        for(int i=0;i<set_count;i++)
+        {
+            set_array[i].create_shape_element(serializer);
+        }
 
     }
 

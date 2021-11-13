@@ -80,6 +80,15 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 //Later move it to add_shape button
                 TransmitRectangleUtility.add_shape_element();
 
+                //Temp code for testing without UI
+                /*CurrentShapeElement.base_width = 150;
+                CurrentShapeElement.base_height = 100;
+                CurrentShapeElement.horizontal_deviation = (float)106.5;
+
+                CurrentShapeElement.shape_text = "Visual C#";
+
+                TransmitRectangleUtility.add_shape_element();*/
+
                 Intent intent = new Intent(context, TransmitRectangleActivity.class);
                 startActivity(intent);
 
