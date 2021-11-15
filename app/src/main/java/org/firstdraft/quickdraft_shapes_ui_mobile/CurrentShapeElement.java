@@ -7,6 +7,6 @@ public class CurrentShapeElement {
     static float horizontal_deviation;
 
     static String shape_text;
-
+    static String connector;
 
 }
