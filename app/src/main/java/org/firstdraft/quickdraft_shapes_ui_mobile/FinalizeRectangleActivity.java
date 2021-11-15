@@ -21,9 +21,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
     CheckBox connector_checkbox;
     String connector_string;
-    //TextView connector_view;
-    //TextView file_name_view;
-    //TextView user_name_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +64,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         Button shape_button = (Button) findViewById(R.id.ShowShape);
 
         shape_text_view = (TextView) findViewById(R.id.ShapeText);
-        //file_name_view = (TextView) findViewById(R.id.ShapeFileName);
-        //user_name_view = (TextView) findViewById(R.id.UserName);
         connector_checkbox = (CheckBox) findViewById(R.id.Connector);
 
         Button transmit_button = (Button) findViewById(R.id.TransmitShape);
@@ -77,9 +72,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         shape_text_view.setText(RectangleView.s);
         Boolean connector_state = convert_connector_status(connector_string);
         connector_checkbox.setChecked(connector_state);
-        //connector_view.setText(RectangleView.connector);
-        //file_name_view.setText(RectangleView.file_name);
-        //user_name_view.setText(RectangleView.user_name);
 
         shape_button.setOnClickListener(new View.OnClickListener() {
 
@@ -88,10 +80,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 String shape_string = shape_text_view.getText().toString();
                 connector_string = get_connector_status(connector_checkbox);
-                //String connector_string = connector_view.getText().toString();
-                //RectangleView.file_name = "after_delete.docx";
-                //RectangleView.file_name = file_name_view.getText().toString();
-                //RectangleView.user_name = user_name_view.getText().toString();
 
                 RectangleView.s = shape_string;
                 RectangleView.connector = connector_string;
@@ -101,7 +89,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 setContentView(R.layout.activity_main);
                 addButtonListener();
-                //setContentView(R.layout.activity_main);
 
             }
         });
@@ -116,15 +103,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 //Adding final shape
                 TransmitRectangleUtility.add_shape_element();
-
-                //Temp code for testing without UI
-                /*CurrentShapeElement.base_width = 150;
-                CurrentShapeElement.base_height = 100;
-                CurrentShapeElement.horizontal_deviation = (float)106.5;
-
-                CurrentShapeElement.shape_text = "Visual C#";
-
-                TransmitRectangleUtility.add_shape_element();*/
 
                 Intent intent = new Intent(context, TransmitRectangleActivity.class);
                 startActivity(intent);
@@ -153,7 +131,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     {
             //TransmitRectangleUtility.user_name = user_name_view.getText().toString();
             //TransmitRectangleUtility.file_name = file_name_view.getText().toString();
-
     }
 
 }
