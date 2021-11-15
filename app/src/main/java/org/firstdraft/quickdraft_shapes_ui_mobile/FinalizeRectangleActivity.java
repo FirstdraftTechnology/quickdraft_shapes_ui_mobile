@@ -108,6 +108,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 TransmitRectangleUtility.add_shape_element();
                 RectangleView.s = "";
+                RectangleView.connector = "";
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
