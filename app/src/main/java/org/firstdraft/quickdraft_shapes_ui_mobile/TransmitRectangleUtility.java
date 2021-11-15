@@ -77,6 +77,16 @@ public class TransmitRectangleUtility {
         set.horizontal_deviation  = CurrentShapeElement.horizontal_deviation;
         set.shape_text = CurrentShapeElement.shape_text;
 
+        /*if(set_count % 2 == 0)
+        {
+            set.connector = "true";
+        }
+        else
+        {
+            set.connector = "false";
+        }*/
+        set.connector = CurrentShapeElement.connector;
+
         int current_len = set_count;
 
         //set_array = new ShapeElementTag[1];

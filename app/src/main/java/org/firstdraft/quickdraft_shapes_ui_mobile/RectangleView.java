@@ -23,6 +23,7 @@ public class RectangleView
     float text_width,textSize;
 
     static String s = "";
+    static String connector =  "";
 
     EditText ed;
 
@@ -68,6 +69,7 @@ public class RectangleView
         CurrentShapeElement.horizontal_deviation = text_width;
 
         CurrentShapeElement.shape_text = s;
+        CurrentShapeElement.connector = connector;
 
         /*TransmitRectangleUtility.add_shape_element(RECTANGLE_BASE_WIDTH, RECTANGLE_BASE_HEIGHT,
                                                     text_width, s);*/

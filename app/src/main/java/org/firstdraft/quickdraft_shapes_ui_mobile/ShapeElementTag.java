@@ -10,6 +10,8 @@ public class ShapeElementTag {
     float horizontal_deviation;
     String shape_text;
 
+    String connector = "true";
+
     void create_shape_element(XmlSerializer serializer)
             throws Exception
     {
@@ -18,8 +20,11 @@ public class ShapeElementTag {
 
         serializer.attribute("", "base_width", Float.toString(base_width));
         serializer.attribute("", "base_height", Float.toString(base_height));
+
         serializer.attribute("", "horizontal_deviation",
                 Float.toString(horizontal_deviation));
+        serializer.attribute("", "connector",
+                connector);
 
         serializer.text(shape_text);
 
