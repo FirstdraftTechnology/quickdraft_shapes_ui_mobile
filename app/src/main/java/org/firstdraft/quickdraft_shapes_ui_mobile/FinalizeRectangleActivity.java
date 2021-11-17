@@ -31,7 +31,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         addButtonListener();
     }
 
-    private String get_connector_status(CheckBox connector)
+    /*private String get_connector_status(CheckBox connector)
     {
         if(connector.isChecked()){
             return "true";
@@ -54,7 +54,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         {
             return false;
         }
-    }
+    }*/
 
     public void addButtonListener()
     {
@@ -71,7 +71,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);
 
         shape_text_view.setText(RectangleView.s);
-        Boolean connector_state = convert_connector_status(connector_string);
+        Boolean connector_state = ShapeUtility.convert_connector_status(connector_string);
         connector_checkbox.setChecked(connector_state);
 
         shape_button.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +80,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 String shape_string = shape_text_view.getText().toString();
-                connector_string = get_connector_status(connector_checkbox);
+                connector_string = ShapeUtility.get_connector_status(connector_checkbox);
 
                 RectangleView.s = shape_string;
                 RectangleView.connector = connector_string;
