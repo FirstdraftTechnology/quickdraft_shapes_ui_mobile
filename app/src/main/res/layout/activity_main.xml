@@ -36,16 +36,6 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--EditText
-            android:id="@+id/Connector"
-            android:layout_height="50dp"
-            android:layout_width="match_parent"
-            android:hint="true or false for connector!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" /!-->
-
         <CheckBox
             android:id="@+id/Connector"
             android:layout_width="wrap_content"
@@ -67,26 +57,6 @@
             android:layout_marginTop="5dp"
             />
 
-        <!--EditText
-            android:id="@+id/ShapeFileName"
-            android:layout_height="50dp"
-            android:layout_width="match_parent"
-            android:hint="Shape filename here!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/UserName"
-            android:layout_height="50dp"
-            android:layout_width="match_parent"
-            android:hint="Username here!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" /!-->
-
         <Button
             android:id="@+id/AppendShape"
             android:layout_width="125dp"
@@ -107,6 +77,20 @@
             android:layout_height="57dp"
             android:paddingTop="3dp"
             android:text="Transmit Shape"
+            android:layout_marginLeft="5dp"
+            android:background="@color/purple_700"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="36dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            />
+
+        <Button
+            android:id="@+id/ArrangeShapes"
+            android:layout_width="125dp"
+            android:layout_height="57dp"
+            android:paddingTop="3dp"
+            android:text="Arrange Shapes"
             android:layout_marginLeft="5dp"
             android:background="@color/purple_700"
             tools:layout_editor_absoluteX="25dp"
