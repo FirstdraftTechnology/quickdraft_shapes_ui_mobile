@@ -68,6 +68,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
         Button transmit_button = (Button) findViewById(R.id.TransmitShape);
         Button append_button = (Button) findViewById(R.id.AppendShape);
+        Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);
 
         shape_text_view.setText(RectangleView.s);
         Boolean connector_state = convert_connector_status(connector_string);
@@ -120,6 +121,17 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 RectangleView.connector = "";
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        arrange_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(context, RectanglesArrangementActivity.class);
                 startActivity(intent);
 
             }
