@@ -87,6 +87,10 @@ public class RectanglesArragementView extends AppCompatTextView {
         int length = TransmitRectangleUtility.set_array.length;
 
         for (int i = 0; i < length; i++) {
+
+            connector = ShapeUtility.convert_connector_status
+                    (TransmitRectangleUtility.set_array[i].connector);
+
             if (i == length - 1) {
                 connector = false;
             }
