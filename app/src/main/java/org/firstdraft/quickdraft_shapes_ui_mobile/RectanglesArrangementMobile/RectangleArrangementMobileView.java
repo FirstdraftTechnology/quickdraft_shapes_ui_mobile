@@ -11,6 +11,8 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+
 public class RectangleArrangementMobileView extends View
     implements RectangleArrangementCallbacks
 {
@@ -43,11 +45,11 @@ public class RectangleArrangementMobileView extends View
         init(attrs);
     }
 
-    public RectangleArrangementMobileView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    /*public RectangleArrangementMobileView(Context context, @Nullable AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
 
         init(attrs);
-    }
+    }*/
 
     public int get_text_measure(String text)
     {
@@ -127,7 +129,8 @@ public class RectangleArrangementMobileView extends View
     private  void draw_single_rectangle_with_text(Canvas canvas,
                                                   int rect_left_local, int rect_top_local,
                                                   int rect_width_local, int rect_height_local,
-                                                  String text)
+                                                  String text, boolean connector,
+                                                  int next_rectangle_left)
     {
 
         mRect.left = rect_left_local;
@@ -137,6 +140,18 @@ public class RectangleArrangementMobileView extends View
 
         canvas.drawRect(mRect,mPaint);
 
+        //Connector
+        if(connector == true)
+        {
+                canvas.drawLine(rect_left_local + rect_width_local,
+                                rect_top_local + rect_height_local/2,
+                                      next_rectangle_left,
+                                rect_top_local + rect_height_local/2,
+                                        mPaint);
+
+        }
+
+        //Text inside rectangle
         float text_x = (float)rect_left_local;
         float text_y = rect_top_local + (int) RectangleArrangementParams.text_size;
 
@@ -156,11 +171,22 @@ public class RectangleArrangementMobileView extends View
             i++)
         {
 
+            boolean connector = false;
+            int next_rectangle_left = -1;//initialization
+
+            if(i != RectangleArrangementParams.rectangle_count - 1)
+            {
+                connector = RectangleArrangementParams.connector[i];
+                next_rectangle_left = RectangleArrangementParams.rectangle_left_array[i+1];
+            }
+
             draw_single_rectangle_with_text(canvas,
                     RectangleArrangementParams.rectangle_left_array[i],
                     RectangleArrangementParams.rectangle_top,
                     RectangleArrangementParams.rect_width_array[i], rect_height_local,
-                    RectangleArrangementParams.rect_string_array[i]);
+                    RectangleArrangementParams.rect_string_array[i],
+                    connector,
+                    next_rectangle_left);
 
         }
 

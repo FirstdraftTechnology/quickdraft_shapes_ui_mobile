@@ -10,7 +10,7 @@ public class ShapeElementTag {
     float horizontal_deviation;
     public String shape_text;
 
-    String connector = "true";
+    public String connector = "true";
 
     void create_shape_element(XmlSerializer serializer)
             throws Exception

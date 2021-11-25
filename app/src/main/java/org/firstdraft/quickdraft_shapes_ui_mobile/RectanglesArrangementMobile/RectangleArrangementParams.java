@@ -2,6 +2,7 @@ package org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile;
 
 import android.util.Log;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapeUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
 public class RectangleArrangementParams {
@@ -11,7 +12,10 @@ public class RectangleArrangementParams {
     /*public static String[] rect_string_array = {"Text 1","This is longer 2","3 Text",
             "This is longer 4"};*/
     public static String[] rect_string_array;
+
     public static int[] rect_width_array;
+    public static boolean connector[];
+
     static int text_size;
 
     public static int rectangle_distance_array[];
@@ -42,11 +46,16 @@ public class RectangleArrangementParams {
         }
 
         rect_width_array = new int [rectangle_count];
+        connector = new boolean [rectangle_count];
 
         for(int i=0;i<rectangle_count;i++)
         {
             float text_width = arrangement_view.get_text_measure(rect_string_array[i]);
             rect_width_array[i] = rect_width + (int)text_width;
+
+            connector[i] = ShapeUtility.convert_connector_status
+                    (TransmitRectangleUtility.set_array[i].connector);
+
         }
 
         for(int i=1;i<rectangle_count;i++)
