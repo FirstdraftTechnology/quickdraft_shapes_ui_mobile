@@ -13,7 +13,7 @@ public class TransmitRectangleUtility {
     static int canvas_width;
     static int canvas_height;
 
-    static ShapeElementTag set_array[];
+    public static ShapeElementTag set_array[];
     static int set_count = 0;
 
     public static XmlSerializer serializer;

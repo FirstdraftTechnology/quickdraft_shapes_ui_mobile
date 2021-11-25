@@ -7,10 +7,12 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 import org.firstdraft.draw_transmit_shapes.R;
+import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView;
 
 public class RectanglesArrangementActivity extends AppCompatActivity {
 
-    RectanglesArragementView arragement_view;
+    //RectanglesArragementView arragement_view;
+    RectangleArrangementMobileView arragement_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +27,8 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
     {
         Context context = this;
 
-        arragement_view = new RectanglesArragementView(context);
+        arragement_view = new RectangleArrangementMobileView(context);
         arragement_view.setBackgroundColor(Color.WHITE);
-
-        //setContentView(R.layout.activity_rectangles_arrangement);
-        //addButtonListener();
 
     }
 }

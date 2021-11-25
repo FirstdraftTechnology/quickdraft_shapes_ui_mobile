@@ -8,7 +8,7 @@ public class ShapeElementTag {
     float base_height;
 
     float horizontal_deviation;
-    String shape_text;
+    public String shape_text;
 
     String connector = "true";
 

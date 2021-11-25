@@ -9,7 +9,15 @@
         android:weightSum="100"
         tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity">
 
-    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArragementView
+    <!--org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArragementView
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:layout_gravity="center"
+        android:layout_above="@id/linear"/!-->
+
+    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView
         android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
