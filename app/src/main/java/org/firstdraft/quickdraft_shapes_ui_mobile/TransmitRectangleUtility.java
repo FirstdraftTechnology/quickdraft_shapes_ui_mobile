@@ -31,6 +31,14 @@ public class TransmitRectangleUtility {
     {
         for(int i=0;i<set_count;i++)
         {
+            if(i%2 == 0)
+            {
+                set_array[i].distance_mf = (float)1.25;
+            }
+            else
+            {
+                set_array[i].distance_mf = (float)0.5;
+            }
             set_array[i].create_shape_element(serializer);
         }
 

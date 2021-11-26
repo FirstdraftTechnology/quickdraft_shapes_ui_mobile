@@ -8,7 +8,7 @@ public class ShapeElementTag {
     float base_height;
 
     float horizontal_deviation;
-    public float rectangle_distance = (float)110.0;
+    public float distance_mf = (float)1.0;
 
     public String shape_text;
 
@@ -25,8 +25,8 @@ public class ShapeElementTag {
 
         serializer.attribute("", "horizontal_deviation",
                 Float.toString(horizontal_deviation));
-        serializer.attribute("", "rectangle_distance",
-                Float.toString(rectangle_distance));
+        serializer.attribute("", "distance_mf",
+                Float.toString(distance_mf));
 
         serializer.attribute("", "connector",
                 connector);
