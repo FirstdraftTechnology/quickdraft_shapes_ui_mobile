@@ -7,7 +7,7 @@ import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
 public class RectangleArrangementParams {
 
-    static int rectangle_count = 0;
+    public static int rectangle_count = 0;
 
     /*public static String[] rect_string_array = {"Text 1","This is longer 2","3 Text",
             "This is longer 4"};*/

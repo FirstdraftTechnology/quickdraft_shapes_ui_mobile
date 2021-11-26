@@ -31,17 +31,22 @@ public class TransmitRectangleUtility {
     {
         for(int i=0;i<set_count;i++)
         {
-            if(i%2 == 0)
+            /*if(i%2 == 0)
             {
                 set_array[i].distance_mf = (float)1.25;
             }
             else
             {
                 set_array[i].distance_mf = (float)0.5;
-            }
+            }*/
             set_array[i].create_shape_element(serializer);
         }
 
+    }
+
+    static void update_distance_mf(int index,float distance_mf)
+    {
+        set_array[index].distance_mf = distance_mf;
     }
 
     static void add_shape_element()

@@ -21,22 +21,22 @@
         android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="50"
+        android:layout_weight="25"
         android:layout_gravity="center"
         android:layout_above="@id/linear"/>
 
-    <!--Button
-        android:id="@+id/ShowShape"
+    <Button
+        android:id="@+id/CommitArrangement"
         android:layout_width="125dp"
         android:layout_height="57dp"
         android:paddingTop="3dp"
-        android:text="Show Shape"
+        android:text="Commit Arrangement"
         android:layout_marginLeft="5dp"
         android:background="@color/purple_700"
         tools:layout_editor_absoluteX="25dp"
         tools:layout_editor_absoluteY="36dp"
         android:textColor="@color/white"
         android:layout_marginTop="5dp"
-        /!-->
+        />
 
 </LinearLayout>
