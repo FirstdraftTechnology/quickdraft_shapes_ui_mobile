@@ -10,10 +10,11 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
-public class RectangleArrangementMobileView extends View
+public class RectangleArrangementMobileView extends AppCompatTextView
     implements RectangleArrangementCallbacks
 {
 
