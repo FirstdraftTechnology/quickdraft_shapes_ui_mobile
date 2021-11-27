@@ -27,6 +27,7 @@ public class RectangleArrangementParams {
     public static int rect_height = 75;
 
     public static final int rect_distance_initial = 47;
+    public static final int rect_top_initial = 200;
     public static final int text_size_initial = 51;
 
     public static int rect_left_start = 15;
@@ -90,7 +91,7 @@ public class RectangleArrangementParams {
         rectangle_distance_array[0] = rect_distance_initial;
 
         rectangle_left_array[0] = rect_left_start;
-        rectangle_top = 50;
+        rectangle_top = rect_top_initial;
 
         for(int i=1;i<rectangle_count;i++)
         {

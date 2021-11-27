@@ -24,7 +24,7 @@ public class RectangleArrangementMobileView extends AppCompatTextView
     static Paint text_paint;
 
     int rect_left = RectangleArrangementParams.rect_left_start;
-    int rect_top = 10;
+    int rect_top = RectangleArrangementParams.rect_top_initial;
     int touched_rectangle;
     float press_down_x, press_down_y;
 
