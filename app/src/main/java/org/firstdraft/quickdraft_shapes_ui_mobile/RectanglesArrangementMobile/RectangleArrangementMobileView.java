@@ -23,7 +23,7 @@ public class RectangleArrangementMobileView extends AppCompatTextView
     Paint mPaint;
     static Paint text_paint;
 
-    int rect_left = 10;
+    int rect_left = RectangleArrangementParams.rect_left_start;
     int rect_top = 10;
     int touched_rectangle;
     float press_down_x, press_down_y;
@@ -70,7 +70,8 @@ public class RectangleArrangementMobileView extends AppCompatTextView
 
         text_paint.setTextAlign(Paint.Align.LEFT);
         text_paint.setColor(Color.BLACK);
-        text_paint.setTextSize(34);
+        //text_paint.setTextSize(34);
+        text_paint.setTextSize(RectangleArrangementParams.text_size_initial);
 
         RectangleArrangementParams.text_size = (int)text_paint.getTextSize();
         RectangleArrangementParams.arrangement_view = this;

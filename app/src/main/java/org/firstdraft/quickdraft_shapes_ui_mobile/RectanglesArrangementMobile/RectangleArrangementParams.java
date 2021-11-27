@@ -23,11 +23,13 @@ public class RectangleArrangementParams {
     public static int rectangle_left_array[];
     public static int rectangle_top;
 
-    public static int rect_width = 50;
-    public static final int rect_distance_initial = 62;
-    public static int rect_height = 50;
+    public static int rect_width = 75;
+    public static int rect_height = 75;
 
-    public static int rect_left_start = 10;
+    public static final int rect_distance_initial = 47;
+    public static final int text_size_initial = 51;
+
+    public static int rect_left_start = 15;
 
     static RectangleArrangementCallbacks arrangement_view;
 
@@ -85,14 +87,14 @@ public class RectangleArrangementParams {
         rectangle_distance_array = new int [rectangle_count];
         rectangle_left_array = new int [rectangle_count];
 
-        rectangle_distance_array[0] = 50;
+        rectangle_distance_array[0] = rect_distance_initial;
 
         rectangle_left_array[0] = rect_left_start;
         rectangle_top = 50;
 
         for(int i=1;i<rectangle_count;i++)
         {
-            rectangle_distance_array[i] = 50;
+            rectangle_distance_array[i] = rect_distance_initial;
 
             rectangle_left_array[i] = rectangle_left_array[i - 1] +
                     (rect_width + rectangle_distance_array[i]);
