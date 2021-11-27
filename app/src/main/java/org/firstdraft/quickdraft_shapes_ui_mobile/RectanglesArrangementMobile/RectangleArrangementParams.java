@@ -58,18 +58,28 @@ public class RectangleArrangementParams {
 
         }
 
-        for(int i=1;i<rectangle_count;i++)
+        if(RectangleArrangementUtility.initial_commit_done == false)
         {
-            rectangle_distance_array[i] = rect_distance_final;
+            for (int i = 1; i < rectangle_count; i++) {
+                rectangle_distance_array[i] = rect_distance_final;
 
-            rectangle_left_array[i] = rectangle_left_array[i - 1] +
-                    (rect_width_array[i - 1] + rectangle_distance_array[i]);
+                rectangle_left_array[i] = rectangle_left_array[i - 1] +
+                        (rect_width_array[i - 1] + rectangle_distance_array[i]);
 
+            }
         }
+
     }
 
     public static void init()
     {
+
+        if(RectangleArrangementUtility.initial_commit_done == true)
+        {
+            init_for_string_array();
+            return;
+        }
+
         rectangle_count = TransmitRectangleUtility.set_array.length;
 
         rectangle_distance_array = new int [rectangle_count];

@@ -189,6 +189,7 @@ public class RectangleArrangementMobileView extends AppCompatTextView
                     connector,
                     next_rectangle_left);
 
+
         }
 
     }

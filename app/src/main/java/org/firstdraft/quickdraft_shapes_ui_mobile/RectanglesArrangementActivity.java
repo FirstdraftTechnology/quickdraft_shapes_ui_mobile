@@ -12,6 +12,7 @@ import android.widget.Button;
 import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementParams;
+import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
 
 public class RectanglesArrangementActivity extends AppCompatActivity {
 
@@ -55,6 +56,8 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
                     TransmitRectangleUtility.update_distance_mf(i-1,new_distance_mf);
 
                 }
+
+                RectangleArrangementUtility.initial_commit_done = true;
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);

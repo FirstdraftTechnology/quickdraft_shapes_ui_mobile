@@ -49,6 +49,11 @@ public class TransmitRectangleUtility {
         set_array[index].distance_mf = distance_mf;
     }
 
+    static float get_distance_mf(int index)
+    {
+        return set_array[index].distance_mf;
+    }
+
     static void add_shape_element()
     {
 

@@ -3,6 +3,9 @@ package org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile;
 public class RectangleArrangementUtility
 {
 
+    /*public static int committed_id = 0;*/
+    public static boolean initial_commit_done = false;
+
     public static String get_summary_string(String complete_text)
     {
         if(complete_text.length() < 5)
