@@ -51,8 +51,7 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
 
                     float new_distance_mf
                             = (float)RectangleArrangementParams.rectangle_distance_array[i - 1]
-                                / (float)RectangleArrangementParams.rect_distance_final;
-
+                                / (float)RectangleArrangementParams.rect_distance_initial;
                     TransmitRectangleUtility.update_distance_mf(i-1,new_distance_mf);
 
                 }

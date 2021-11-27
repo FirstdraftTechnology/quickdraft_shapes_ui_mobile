@@ -24,7 +24,7 @@ public class RectangleArrangementParams {
     public static int rectangle_top;
 
     public static int rect_width = 50;
-    public static final int rect_distance_final = 50;
+    public static final int rect_distance_initial = 62;
     public static int rect_height = 50;
 
     public static int rect_left_start = 10;
@@ -61,7 +61,7 @@ public class RectangleArrangementParams {
         if(RectangleArrangementUtility.initial_commit_done == false)
         {
             for (int i = 1; i < rectangle_count; i++) {
-                rectangle_distance_array[i] = rect_distance_final;
+                rectangle_distance_array[i] = rect_distance_initial;
 
                 rectangle_left_array[i] = rectangle_left_array[i - 1] +
                         (rect_width_array[i - 1] + rectangle_distance_array[i]);
