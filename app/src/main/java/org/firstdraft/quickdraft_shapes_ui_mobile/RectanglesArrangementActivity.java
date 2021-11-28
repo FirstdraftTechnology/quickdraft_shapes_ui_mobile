@@ -58,6 +58,9 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
 
                 RectangleArrangementUtility.initial_commit_done = true;
 
+                TransmitRectangleUtility.vertical_mf = (float)RectangleArrangementParams.rectangle_top/
+                        (float)RectangleArrangementParams.rect_top_initial;
+
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
 
