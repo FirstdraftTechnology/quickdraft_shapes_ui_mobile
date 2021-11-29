@@ -31,31 +31,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         addButtonListener();
     }
 
-    /*private String get_connector_status(CheckBox connector)
-    {
-        if(connector.isChecked()){
-            return "true";
-        }
-        return "false";
-    }
-
-    private Boolean convert_connector_status(String status)
-    {
-        if(status == null)
-        {
-            return false;
-        }
-
-        if(status.equals("true"))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }*/
-
     public void addButtonListener()
     {
 

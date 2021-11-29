@@ -48,7 +48,7 @@ public class TransmitRectangleUtility {
 
     }
 
-    static void update_distance_mf(int index,float distance_mf)
+    public static void update_distance_mf(int index,float distance_mf)
     {
         set_array[index].distance_mf = distance_mf;
     }

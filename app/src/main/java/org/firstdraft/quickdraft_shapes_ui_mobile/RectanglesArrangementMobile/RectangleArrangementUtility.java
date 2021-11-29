@@ -1,5 +1,7 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+
 public class RectangleArrangementUtility
 {
 
@@ -63,6 +65,28 @@ public class RectangleArrangementUtility
         }
 
         return -1;
+    }
+
+    public static void after_commiting_arrangement()
+    {
+        for(int i=1;i < RectangleArrangementParams.rectangle_count;i++)
+        {
+            RectangleArrangementParams.rectangle_distance_array[i - 1]
+                    = RectangleArrangementParams.rectangle_left_array[i]
+                    - RectangleArrangementParams.rect_width_array[i-1]
+                    - RectangleArrangementParams.rectangle_left_array[i - 1];
+
+            float new_distance_mf
+                    = (float)RectangleArrangementParams.rectangle_distance_array[i - 1]
+                    / (float)RectangleArrangementParams.rect_distance_initial;
+            TransmitRectangleUtility.update_distance_mf(i-1,new_distance_mf);
+
+        }
+
+        RectangleArrangementUtility.initial_commit_done = true;
+
+        TransmitRectangleUtility.vertical_mf = (float)RectangleArrangementParams.rectangle_top/
+                (float)RectangleArrangementParams.rect_top_initial;
     }
 
 }
