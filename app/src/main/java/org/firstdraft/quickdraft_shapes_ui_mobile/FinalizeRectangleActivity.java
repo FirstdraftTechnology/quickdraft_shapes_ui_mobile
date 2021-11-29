@@ -103,7 +103,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 set_someMore_params();
 
                 //Adding final shape
-                TransmitRectangleUtility.add_shape_element();
+                //TransmitRectangleUtility.add_shape_element();
 
                 Intent intent = new Intent(context, TransmitRectangleActivity.class);
                 startActivity(intent);

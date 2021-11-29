@@ -9,20 +9,51 @@
         android:weightSum="100"
         tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity">
 
-    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArragementView
+    <!--org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArragementView
         android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="50"
         android:layout_gravity="center"
-        android:layout_above="@id/linear"/>
+        android:layout_above="@id/linear"/!-->
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/linear"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="30"
+        android:orientation="vertical"
+        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
+
+    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView
+        android:id="@+id/myView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="25"
+        android:layout_gravity="center"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="70"
+        android:orientation="vertical"
+        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
+
 
     <!--Button
-        android:id="@+id/ShowShape"
-        android:layout_width="125dp"
-        android:layout_height="57dp"
+        android:id="@+id/CommitArrangement"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textSize="10dp"
         android:paddingTop="3dp"
-        android:text="Show Shape"
+        android:text="Commit Arrangement"
         android:layout_marginLeft="5dp"
         android:background="@color/purple_700"
         tools:layout_editor_absoluteX="25dp"
@@ -30,5 +61,21 @@
         android:textColor="@color/white"
         android:layout_marginTop="5dp"
         /!-->
+
+        <Button
+            android:id="@+id/CommitArrangement"
+            android:layout_width="250dp"
+            android:layout_height="57dp"
+            android:paddingTop="3dp"
+            android:text="Commit Arrangement"
+            android:layout_marginLeft="5dp"
+            android:background="@color/purple_700"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="36dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            />
+
+    </LinearLayout>
 
 </LinearLayout>
