@@ -41,7 +41,7 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                RectangleArrangementUtility.after_commiting_arrangement();
+                RectangleArrangementUtility.after_committing_arrangement();
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);

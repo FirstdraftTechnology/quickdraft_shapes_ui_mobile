@@ -67,7 +67,7 @@ public class RectangleArrangementUtility
         return -1;
     }
 
-    public static void after_commiting_arrangement()
+    public static void after_committing_arrangement()
     {
         for(int i=1;i < RectangleArrangementParams.rectangle_count;i++)
         {
