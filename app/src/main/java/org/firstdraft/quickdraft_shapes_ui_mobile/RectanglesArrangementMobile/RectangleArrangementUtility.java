@@ -7,6 +7,7 @@ public class RectangleArrangementUtility
 
     /*public static int committed_id = 0;*/
     public static boolean initial_commit_done = false;
+    public static int last_commit_index = 0;
 
     public static String get_summary_string(String complete_text)
     {
@@ -84,6 +85,7 @@ public class RectangleArrangementUtility
         }
 
         RectangleArrangementUtility.initial_commit_done = true;
+        last_commit_index = RectangleArrangementParams.rectangle_count - 1;
 
         TransmitRectangleUtility.vertical_mf = (float)RectangleArrangementParams.rectangle_top/
                 (float)RectangleArrangementParams.rect_top_initial;

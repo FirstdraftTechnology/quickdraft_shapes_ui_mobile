@@ -61,44 +61,78 @@ public class RectangleArrangementParams {
 
         }
 
-        if(RectangleArrangementUtility.initial_commit_done == false)
-        {
+        //if(RectangleArrangementUtility.initial_commit_done == false)
+        //{
             for (int i = 1; i < rectangle_count; i++) {
-                rectangle_distance_array[i] = rect_distance_initial;
+
+                /*if(i > RectangleArrangementUtility.last_commit_index)
+                {
+                    rectangle_distance_array[i] = rect_distance_initial;
+                }*/
 
                 rectangle_left_array[i] = rectangle_left_array[i - 1] +
-                        (rect_width_array[i - 1] + rectangle_distance_array[i]);
+                        (rect_width_array[i - 1] + rectangle_distance_array[i-1]);
 
             }
-        }
+        //}
 
     }
 
     public static void init()
     {
 
-        if(RectangleArrangementUtility.initial_commit_done == true)
+        /*if(RectangleArrangementUtility.initial_commit_done == true)
         {
             init_for_string_array();
             return;
-        }
+        }*/
 
         rectangle_count = TransmitRectangleUtility.set_array.length;
 
         rectangle_distance_array = new int [rectangle_count];
         rectangle_left_array = new int [rectangle_count];
 
-        rectangle_distance_array[0] = rect_distance_initial;
+        //rectangle_distance_array[0] = rect_distance_initial;
+        if(RectangleArrangementUtility.initial_commit_done == false)
+        {
 
-        rectangle_left_array[0] = rect_left_start;
-        rectangle_top = rect_top_initial;
+            rectangle_distance_array[0] = rect_distance_initial;
+            rectangle_left_array[0] = rect_left_start;
+            rectangle_top = rect_top_initial;
+
+        }
+        else
+        {
+            rectangle_distance_array[0] = (int)
+                    (TransmitRectangleUtility.set_array[0].distance_mf
+                            * rect_distance_initial);
+
+            //Parameterize later
+            rectangle_left_array[0] = rect_left_start;
+
+            rectangle_top =
+                    (int)(rect_top_initial * TransmitRectangleUtility.vertical_mf);
+        }
+
+        //rectangle_left_array[0] = rect_left_start;
+        //rectangle_top = rect_top_initial;
 
         for(int i=1;i<rectangle_count;i++)
         {
-            rectangle_distance_array[i] = rect_distance_initial;
+            if(i > RectangleArrangementUtility.last_commit_index)
+            {
+                rectangle_distance_array[i] = rect_distance_initial;
+            }
+            else
+            {
+                rectangle_distance_array[i] = (int)
+                        (TransmitRectangleUtility.set_array[i].distance_mf
+                                                * rect_distance_initial);
 
-            rectangle_left_array[i] = rectangle_left_array[i - 1] +
-                    (rect_width + rectangle_distance_array[i]);
+            }
+
+            /*rectangle_left_array[i] = rectangle_left_array[i - 1] +
+                    (rect_width + rectangle_distance_array[i-1]);*/
 
         }
 

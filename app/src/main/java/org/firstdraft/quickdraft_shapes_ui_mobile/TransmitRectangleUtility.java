@@ -28,6 +28,7 @@ public class TransmitRectangleUtility {
         RectangleView.connector = "";
 
         RectangleArrangementUtility.initial_commit_done = false;
+        RectangleArrangementUtility.last_commit_index = 0;
     }
 
     static void create_shape_element_wrapper(XmlSerializer serializer)
