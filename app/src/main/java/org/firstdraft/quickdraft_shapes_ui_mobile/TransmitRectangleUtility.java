@@ -1,6 +1,8 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile;
 
 import android.util.Xml;
+
+import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.StringWriter;
@@ -25,6 +27,7 @@ public class TransmitRectangleUtility {
         RectangleView.s = "";
         RectangleView.connector = "";
 
+        RectangleArrangementUtility.initial_commit_done = false;
     }
 
     static void create_shape_element_wrapper(XmlSerializer serializer)
