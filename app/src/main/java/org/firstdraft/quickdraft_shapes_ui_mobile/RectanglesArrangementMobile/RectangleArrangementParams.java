@@ -29,8 +29,9 @@ public class RectangleArrangementParams {
     public static final int rect_distance_initial = 47;
     public static final int rect_top_initial = 200;
     public static final int text_size_initial = 51;
+    public static int rect_left_start_initial = 15;
 
-    public static int rect_left_start = 15;
+    public static int rect_left_start;
 
     static RectangleArrangementCallbacks arrangement_view;
 
@@ -97,7 +98,7 @@ public class RectangleArrangementParams {
         {
 
             rectangle_distance_array[0] = rect_distance_initial;
-            rectangle_left_array[0] = rect_left_start;
+            rectangle_left_array[0] = rect_left_start_initial;
             rectangle_top = rect_top_initial;
 
         }
@@ -200,6 +201,10 @@ public class RectangleArrangementParams {
         }
 
         rectangle_left_array[rect_id] = final_x;
+        if(rect_id == 0)
+        {
+            rect_left_start = final_x;
+        }
 
     }
 

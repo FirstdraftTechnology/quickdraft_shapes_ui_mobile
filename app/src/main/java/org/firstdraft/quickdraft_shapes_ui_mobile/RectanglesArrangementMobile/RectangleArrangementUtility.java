@@ -89,6 +89,8 @@ public class RectangleArrangementUtility
 
         TransmitRectangleUtility.vertical_mf = (float)RectangleArrangementParams.rectangle_top/
                 (float)RectangleArrangementParams.rect_top_initial;
+        TransmitRectangleUtility.horizontal_mf = (float)RectangleArrangementParams.rect_left_start/
+                (float)RectangleArrangementParams.rect_left_start_initial;
     }
 
 }

@@ -15,6 +15,7 @@ public class TransmitRectangleUtility {
     static int canvas_width;
     static int canvas_height;
     public static float vertical_mf;
+    public static float horizontal_mf;
 
     public static ShapeElementTag set_array[];
     static int set_count = 0;
@@ -109,6 +110,8 @@ public class TransmitRectangleUtility {
 
             serializer.attribute("", "vertical_mf",
                     Float.toString(TransmitRectangleUtility.vertical_mf));
+            serializer.attribute("", "horizontal_mf",
+                    Float.toString(TransmitRectangleUtility.horizontal_mf));
 
             create_shape_element_wrapper(serializer);
 
