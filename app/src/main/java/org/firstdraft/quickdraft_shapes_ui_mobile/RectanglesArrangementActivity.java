@@ -41,25 +41,7 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                //Move to utility and change rect_distance_final name
-                for(int i=1;i < RectangleArrangementParams.rectangle_count;i++)
-                {
-                    RectangleArrangementParams.rectangle_distance_array[i - 1]
-                            = RectangleArrangementParams.rectangle_left_array[i]
-                                - RectangleArrangementParams.rect_width_array[i-1]
-                                - RectangleArrangementParams.rectangle_left_array[i - 1];
-
-                    float new_distance_mf
-                            = (float)RectangleArrangementParams.rectangle_distance_array[i - 1]
-                                / (float)RectangleArrangementParams.rect_distance_initial;
-                    TransmitRectangleUtility.update_distance_mf(i-1,new_distance_mf);
-
-                }
-
-                RectangleArrangementUtility.initial_commit_done = true;
-
-                TransmitRectangleUtility.vertical_mf = (float)RectangleArrangementParams.rectangle_top/
-                        (float)RectangleArrangementParams.rect_top_initial;
+                RectangleArrangementUtility.after_committing_arrangement();
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
