@@ -6,6 +6,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -22,12 +24,16 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     CheckBox connector_checkbox;
     String connector_string;
 
+    private ScaleGestureDetector scaleGestureDetector;
+    private float mScaleFactor = 1.0f;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
 
+        scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
         addButtonListener();
     }
 
@@ -49,6 +55,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         Boolean connector_state = ShapeUtility.convert_connector_status(connector_string);
         connector_checkbox.setChecked(connector_state);
 
+        drawView = findViewById(R.id.myView);
+        drawView.setBackgroundColor(Color.WHITE);
+
         shape_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -60,8 +69,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 RectangleView.s = shape_string;
                 RectangleView.connector = connector_string;
 
-                drawView = new RectangleView(context);
-                drawView.setBackgroundColor(Color.WHITE);
+                //drawView = new RectangleView(context);
+                //drawView = findViewById(R.id.myView);
+                //drawView.setBackgroundColor(Color.WHITE);
 
                 setContentView(R.layout.activity_main);
                 addButtonListener();
@@ -119,5 +129,23 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             //TransmitRectangleUtility.user_name = user_name_view.getText().toString();
             //TransmitRectangleUtility.file_name = file_name_view.getText().toString();
     }
+    @Override
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        scaleGestureDetector.onTouchEvent(motionEvent);
+        return true;
+    }
+    private class ScaleListener extends ScaleGestureDetector.SimpleOnScaleGestureListener {
+        @Override
+        public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
+            mScaleFactor *= scaleGestureDetector.getScaleFactor();
+            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f));
+            //imageView.setScaleX(mScaleFactor);
+            //imageView.setScaleY(mScaleFactor);
 
+            drawView.setScaleX(mScaleFactor);
+            drawView.setScaleY(mScaleFactor);
+
+            return true;
+        }
+    }
 }
