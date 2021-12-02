@@ -67,6 +67,10 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 connector_string = ShapeUtility.get_connector_status(connector_checkbox);
 
                 RectangleView.s = shape_string;
+
+                RectangleView.multiplication_factor = mScaleFactor;
+                mScaleFactor = (float)1.0;
+
                 RectangleView.connector = connector_string;
 
                 //drawView = new RectangleView(context);
