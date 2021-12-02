@@ -72,6 +72,7 @@ public class TransmitRectangleUtility {
         set.shape_text = CurrentShapeElement.shape_text;
 
         set.connector = CurrentShapeElement.connector;
+        set.scaling_factor = CurrentShapeElement.scaling_factor;
 
         int current_len = set_count;
 

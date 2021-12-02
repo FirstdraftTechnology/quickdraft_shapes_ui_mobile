@@ -105,9 +105,19 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
+                CurrentShapeElement.scaling_factor =
+                        RectangleView.multiplication_factor;
                 TransmitRectangleUtility.add_shape_element();
+
                 RectangleView.s = "";
                 RectangleView.connector = "";
+                RectangleView.multiplication_factor = (float)1.0;
+
+                RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
+                RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
+                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
+
+                mScaleFactor = (float)1.0;
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);

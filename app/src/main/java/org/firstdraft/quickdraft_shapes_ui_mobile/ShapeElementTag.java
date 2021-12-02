@@ -13,6 +13,7 @@ public class ShapeElementTag {
     public String shape_text;
 
     public String connector = "true";
+    public float scaling_factor = (float)1.0;
 
     void create_shape_element(XmlSerializer serializer)
             throws Exception
@@ -30,6 +31,8 @@ public class ShapeElementTag {
 
         serializer.attribute("", "connector",
                 connector);
+        serializer.attribute("", "scaling_factor",
+                Float.toString(scaling_factor));
 
         serializer.text(shape_text);
 
