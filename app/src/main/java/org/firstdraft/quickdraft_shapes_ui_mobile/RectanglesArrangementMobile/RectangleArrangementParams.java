@@ -20,9 +20,6 @@ public class RectangleArrangementParams {
 
     public static int rectangle_distance_array[];
 
-    public static int rectangle_left_array[];
-    public static int rectangle_top;
-
     public static int rect_width = 75;
     public static int rect_height = 75;
 
@@ -31,7 +28,9 @@ public class RectangleArrangementParams {
     public static final int text_size_initial = 51;
     public static int rect_left_start_initial = 15;
 
-    public static int rect_left_start;
+    public static int rectangle_left_array[];
+    public static int rectangle_top = rect_top_initial;
+    public static int rect_left_start = rect_left_start_initial;
 
     static RectangleArrangementCallbacks arrangement_view;
 
