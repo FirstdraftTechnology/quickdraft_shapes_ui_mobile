@@ -53,7 +53,7 @@ public class RectangleView
         mpaint.setColor(Color.BLACK);
 
         int x = (this.getWidth() - base_width)/2;
-        int y = 3 * (this.getHeight() - base_height)/4;
+        int y = (this.getHeight() - base_height)/2;
 
         int text_x,text_y;
         text_x = x + (int)text_width/2;
