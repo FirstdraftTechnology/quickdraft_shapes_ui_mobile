@@ -23,19 +23,26 @@ public class RectangleView
     float text_width,textSize;
 
     static String s = "";
+    static float multiplication_factor = (float)1.0;
     static String connector =  "";
 
     EditText ed;
 
-    int RECTANGLE_BASE_WIDTH = 150;
-    int RECTANGLE_BASE_HEIGHT = 100;
+    final static int RECTANGLE_BASE_WIDTH = 150;
+    final static int RECTANGLE_BASE_HEIGHT = 100;
+    final static int TEXT_BASE_SIZE = 50;
+
+    static int base_width_current = RECTANGLE_BASE_WIDTH;
+    static int base_height_current = RECTANGLE_BASE_HEIGHT;
+    static int text_size_base = TEXT_BASE_SIZE;
 
     private void draw_rectangle(Canvas canvas,
                                 int base_width,int base_height,
+                                int text_size_base,
                                 String text)
     {
         paint2.setColor(Color.BLACK);
-        paint2.setTextSize(50);  //set text size
+        paint2.setTextSize(text_size_base);  //set text size
 
         text_width = paint2.measureText(text)/2;
         textSize = paint2.getTextSize();
@@ -46,7 +53,7 @@ public class RectangleView
         mpaint.setColor(Color.BLACK);
 
         int x = (this.getWidth() - base_width)/2;
-        int y = (this.getHeight() - base_height)/2;
+        int y = 3 * (this.getHeight() - base_height)/4;
 
         int text_x,text_y;
         text_x = x + (int)text_width/2;
@@ -64,8 +71,8 @@ public class RectangleView
     private void set_params()
     {
 
-        CurrentShapeElement.base_width = RECTANGLE_BASE_WIDTH;
-        CurrentShapeElement.base_height = RECTANGLE_BASE_HEIGHT;
+        CurrentShapeElement.base_width = base_width_current;
+        CurrentShapeElement.base_height = base_height_current;
         CurrentShapeElement.horizontal_deviation = text_width;
 
         CurrentShapeElement.shape_text = s;
@@ -82,7 +89,13 @@ public class RectangleView
     @Override
     public void onDraw(Canvas canvas) {
 
-        draw_rectangle(canvas,RECTANGLE_BASE_WIDTH,RECTANGLE_BASE_HEIGHT,s);
+        base_width_current = (int)((float)base_width_current * multiplication_factor);
+        base_height_current = (int)((float)base_height_current * multiplication_factor);
+        text_size_base = (int)((float)text_size_base * multiplication_factor);
+
+        draw_rectangle(canvas,base_width_current,
+                base_height_current,text_size_base,
+                s);
 
         set_params();
 
