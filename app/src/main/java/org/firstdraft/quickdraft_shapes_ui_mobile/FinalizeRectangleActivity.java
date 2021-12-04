@@ -27,6 +27,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     private ScaleGestureDetector scaleGestureDetector;
     private float mScaleFactor = 1.0f;
 
+    private float lower_limit = 0.5f;
+    private float upper_limit = 10.0f;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
+        mScaleFactor = 1.0f;
         addButtonListener();
     }
 
@@ -69,7 +73,11 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 RectangleView.s = shape_string;
 
                 RectangleView.multiplication_factor = mScaleFactor;
-                mScaleFactor = (float)1.0;
+
+                lower_limit = lower_limit/RectangleView.multiplication_factor;
+                upper_limit = upper_limit/RectangleView.multiplication_factor;
+
+                mScaleFactor = 1.0f;
 
                 RectangleView.connector = connector_string;
 
@@ -106,7 +114,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 CurrentShapeElement.scaling_factor =
-                        RectangleView.multiplication_factor;
+                        (float)RectangleView.base_width_current /
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+
                 TransmitRectangleUtility.add_shape_element();
 
                 RectangleView.s = "";
@@ -152,7 +162,16 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         @Override
         public boolean onScale(ScaleGestureDetector scaleGestureDetector) {
             mScaleFactor *= scaleGestureDetector.getScaleFactor();
-            mScaleFactor = Math.max(0.1f, Math.min(mScaleFactor, 10.0f));
+
+            /*if(mScaleFactor < 1.0f && RectangleView.multiplication_factor <= 0.5)
+            {
+                mScaleFactor = 1.0f;
+                return false;
+            }*/
+
+            //mScaleFactor = Math.max(0.5f, Math.min(mScaleFactor, 10.0f));
+            //mScaleFactor = Math.max(lower_limit, Math.min(mScaleFactor, 10.0f));
+            mScaleFactor = Math.max(lower_limit, Math.min(mScaleFactor, Math.min(mScaleFactor, upper_limit)));
             //imageView.setScaleX(mScaleFactor);
             //imageView.setScaleY(mScaleFactor);
 
