@@ -93,6 +93,12 @@ public class RectangleView
         base_height_current = (int)((float)base_height_current * multiplication_factor);
         text_size_base = (int)((float)text_size_base * multiplication_factor);
 
+        RectangleView.multiplication_factor = 1.0f;
+
+        /*base_width_current = (int)((float)RECTANGLE_BASE_WIDTH * multiplication_factor);
+        base_height_current = (int)((float)RECTANGLE_BASE_HEIGHT * multiplication_factor);
+        text_size_base = (int)((float)TEXT_BASE_SIZE * multiplication_factor);*/
+
         draw_rectangle(canvas,base_width_current,
                 base_height_current,text_size_base,
                 s);
