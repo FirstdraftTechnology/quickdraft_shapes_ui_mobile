@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Draw_transmit_shapes"
         android:usesCleartextTraffic="true">
-        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity"></activity>
+        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity"></activity>
+        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity" />
         <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.UserFileNameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

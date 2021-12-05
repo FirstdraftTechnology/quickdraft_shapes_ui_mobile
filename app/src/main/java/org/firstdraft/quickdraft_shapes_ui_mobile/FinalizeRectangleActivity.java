@@ -14,6 +14,12 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.firstdraft.draw_transmit_shapes.R;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeElementModel;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListAdapter;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListUtility;
+
+import java.util.ArrayList;
 
 public class FinalizeRectangleActivity extends AppCompatActivity {
 
@@ -54,6 +60,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         Button transmit_button = (Button) findViewById(R.id.TransmitShape);
         Button append_button = (Button) findViewById(R.id.AppendShape);
         Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);
+        Button list_view = (Button) findViewById(R.id.ListView);
 
         shape_text_view.setText(RectangleView.s);
         Boolean connector_state = ShapeUtility.convert_connector_status(connector_string);
@@ -141,6 +148,17 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
                 Intent intent = new Intent(context, RectanglesArrangementActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        list_view.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+
+                Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
 
             }
