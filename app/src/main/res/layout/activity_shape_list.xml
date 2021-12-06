@@ -33,4 +33,60 @@
         >
     </ListView>
 
+    <LinearLayout
+        android:id="@+id/scale_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/ShapeList_AddShape"
+        android:layout_width="125dp"
+        android:layout_height="57dp"
+        android:paddingTop="3dp"
+        android:text="Add Shape"
+        android:layout_marginLeft="10dp"
+        android:background="@color/purple_700"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="36dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        />
+
+        <Button
+        android:id="@+id/ShapeList_ArrangeShapes"
+        android:layout_width="125dp"
+        android:layout_height="57dp"
+        android:paddingTop="3dp"
+        android:text="Arrange Shapes"
+        android:layout_marginLeft="10dp"
+        android:background="@color/purple_700"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="36dp"
+        android:textColor="@color/white"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        />
+
+        <Button
+            android:id="@+id/ShapeList_TransmitShapeGroup"
+            android:layout_width="125dp"
+            android:layout_height="57dp"
+            android:paddingTop="3dp"
+            android:text="Transmit Shape"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@color/purple_700"
+            tools:layout_editor_absoluteX="25dp"
+            tools:layout_editor_absoluteY="36dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            />
+
+    </LinearLayout>
 </LinearLayout>
