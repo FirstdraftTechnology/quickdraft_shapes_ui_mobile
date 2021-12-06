@@ -57,9 +57,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         shape_text_view = (TextView) findViewById(R.id.ShapeText);
         connector_checkbox = (CheckBox) findViewById(R.id.Connector);
 
-        Button transmit_button = (Button) findViewById(R.id.TransmitShape);
+        /*Button transmit_button = (Button) findViewById(R.id.TransmitShape);
         Button append_button = (Button) findViewById(R.id.AppendShape);
-        Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);
+        Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);*/
         Button list_view = (Button) findViewById(R.id.ListView);
 
         shape_text_view.setText(RectangleView.s);
@@ -98,7 +98,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
             }
         });
 
-        transmit_button.setOnClickListener(new View.OnClickListener() {
+        /*transmit_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -151,12 +151,28 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
 
         list_view.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
+
+                CurrentShapeElement.scaling_factor =
+                        (float)RectangleView.base_width_current /
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+
+                TransmitRectangleUtility.add_shape_element();
+
+                RectangleView.s = "";
+                RectangleView.connector = "";
+                RectangleView.multiplication_factor = (float)1.0;
+
+                RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
+                RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
+                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
+
+                mScaleFactor = (float)1.0;
 
                 Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);

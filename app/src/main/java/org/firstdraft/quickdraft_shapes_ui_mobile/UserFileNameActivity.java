@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import org.firstdraft.draw_transmit_shapes.R;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity;
 
 public class UserFileNameActivity extends AppCompatActivity {
 
@@ -45,7 +46,10 @@ public class UserFileNameActivity extends AppCompatActivity {
 
                 TransmitRectangleUtility.reset_shape_group();
 
-                Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                /*Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                startActivity(intent);*/
+
+                Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
 
             }

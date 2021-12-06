@@ -48,7 +48,7 @@
             android:layout_width="125dp"
             android:layout_height="57dp"
             android:paddingTop="3dp"
-            android:text="Show Shape"
+            android:text="Integrate Text"
             android:layout_marginLeft="5dp"
             android:background="@color/purple_700"
             tools:layout_editor_absoluteX="25dp"
@@ -57,7 +57,7 @@
             android:layout_marginTop="5dp"
             />
 
-        <Button
+        <!--Button
             android:id="@+id/AppendShape"
             android:layout_width="125dp"
             android:layout_height="57dp"
@@ -97,14 +97,14 @@
             tools:layout_editor_absoluteY="36dp"
             android:textColor="@color/white"
             android:layout_marginTop="5dp"
-            />
+            /!-->
 
         <Button
             android:id="@+id/ListView"
             android:layout_width="125dp"
             android:layout_height="57dp"
             android:paddingTop="3dp"
-            android:text="List View"
+            android:text="Commit Shape"
             android:layout_marginLeft="5dp"
             android:background="@color/purple_700"
             tools:layout_editor_absoluteX="25dp"
