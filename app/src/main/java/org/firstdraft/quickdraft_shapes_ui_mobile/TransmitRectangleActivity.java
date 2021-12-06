@@ -41,7 +41,7 @@ public class TransmitRectangleActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_shape_list);
 
         /*Log.d("SHAPES","Width - " + TransmitRectangleUtility.base_width);
         Log.d("SHAPES","Height - " + TransmitRectangleUtility.base_height);
