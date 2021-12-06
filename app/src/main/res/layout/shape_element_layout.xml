@@ -3,25 +3,43 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:id="@+id/dir_list_id">
+
+    <LinearLayout
+        android:id="@+id/para_without_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="95"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+    <ImageView
+        android:padding="2dp"
+        android:id="@+id/doc_image_element"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/rectangle_static"
+        android:gravity="center"/>
 
     <TextView
         android:textSize="20dp"
         android:gravity="center"
-        android:background="@drawable/rounded_edittext"
         android:textColor="@color/black"
         android:id="@+id/dir_element_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="90"
         android:inputType="textMultiLine"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:hint=""
-        android:padding="5dp"
+        android:padding="2dp"
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
         android:scrollbars = "vertical"
         />
+
+    </LinearLayout>
 
 </LinearLayout>
