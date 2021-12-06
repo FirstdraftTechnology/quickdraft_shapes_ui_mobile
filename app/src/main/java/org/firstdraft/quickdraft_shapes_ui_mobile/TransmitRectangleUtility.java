@@ -60,7 +60,7 @@ public class TransmitRectangleUtility {
         return set_array[index].distance_mf;
     }
 
-    static void add_shape_element()
+    public static void add_shape_element()
     {
 
         ShapeElementTag set = new ShapeElementTag();

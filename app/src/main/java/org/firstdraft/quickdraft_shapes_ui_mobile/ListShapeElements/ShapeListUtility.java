@@ -9,7 +9,13 @@ public class ShapeListUtility
     public static ArrayList<ShapeElementModel> convert_elementArray_to_arrayList
             (ShapeElementTag[] shape_list_array)
     {
+
         ArrayList<ShapeElementModel> shapeList_as_arrayList = new ArrayList<>();
+
+        if(shape_list_array == null)
+        {
+            return shapeList_as_arrayList;
+        }
 
         for(int i = 0;
             i < shape_list_array.length; i++)

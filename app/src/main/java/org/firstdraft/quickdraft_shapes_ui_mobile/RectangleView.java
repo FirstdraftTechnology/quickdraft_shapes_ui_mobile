@@ -22,19 +22,19 @@ public class RectangleView
 
     float text_width,textSize;
 
-    static String s = "";
-    static float multiplication_factor = (float)1.0;
-    static String connector =  "";
+    public static String s = "";
+    public static float multiplication_factor = (float)1.0;
+    public static String connector =  "";
 
     EditText ed;
 
-    final static int RECTANGLE_BASE_WIDTH = 150;
-    final static int RECTANGLE_BASE_HEIGHT = 100;
-    final static int TEXT_BASE_SIZE = 50;
+    public final static int RECTANGLE_BASE_WIDTH = 150;
+    public final static int RECTANGLE_BASE_HEIGHT = 100;
+    public final static int TEXT_BASE_SIZE = 50;
 
-    static int base_width_current = RECTANGLE_BASE_WIDTH;
-    static int base_height_current = RECTANGLE_BASE_HEIGHT;
-    static int text_size_base = TEXT_BASE_SIZE;
+    public static int base_width_current = RECTANGLE_BASE_WIDTH;
+    public static int base_height_current = RECTANGLE_BASE_HEIGHT;
+    public static int text_size_base = TEXT_BASE_SIZE;
 
     private void draw_rectangle(Canvas canvas,
                                 int base_width,int base_height,

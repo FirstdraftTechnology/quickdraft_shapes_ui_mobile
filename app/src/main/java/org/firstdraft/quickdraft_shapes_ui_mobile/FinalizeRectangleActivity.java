@@ -31,7 +31,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     String connector_string;
 
     private ScaleGestureDetector scaleGestureDetector;
-    private float mScaleFactor = 1.0f;
+    public static float mScaleFactor = 1.0f;
 
     private float lower_limit = 0.5f;
     private float upper_limit = 10.0f;
