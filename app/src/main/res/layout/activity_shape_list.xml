@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/light_grey_textured_background"
     android:weightSum="100"
     tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
 
@@ -20,12 +21,15 @@
         android:layout_width="fill_parent" /!-->
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:id="@+id/shape_list_pointer"
         android:layout_weight="90"
+        android:divider="@null"
         >
     </ListView>
 
