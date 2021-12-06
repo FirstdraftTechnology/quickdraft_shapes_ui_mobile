@@ -56,7 +56,9 @@ public class ShapeListAdapter extends BaseAdapter
             convertView = inflater.inflate(R.layout.shape_element_layout,
                     null, true);
 
-            holder.viewText = (TextView) convertView.findViewById(R.id.dir_element_view);
+            holder.shape_scale = (TextView) convertView.findViewById(R.id.shape_element_scale);
+            holder.shape_text = (TextView) convertView.findViewById(R.id.shape_element_text);
+
             convertView.setTag(holder);
 
         }else {
@@ -67,15 +69,16 @@ public class ShapeListAdapter extends BaseAdapter
         ShapeElementModel current_element = shape_model_array
                 .get(position);
 
-        holder.viewText.setText(current_element.getShape_element_value());
+        holder.shape_scale.setText(current_element.getShape_element_scale());
+        holder.shape_text.setText(current_element.getShape_element_text());
 
         return convertView;
 
     }
 
     private class ViewHolder {
-        //protected ImageView element_icon;
-        protected TextView viewText;
+        protected TextView shape_scale;
+        protected TextView shape_text;
     }
 
 }

@@ -16,7 +16,9 @@ public class ShapeListUtility
         {
 
             ShapeElementModel s = new ShapeElementModel();
-            s.setShape_element_value(shape_list_array[i].shape_text);
+
+            s.setShape_element_scale(shape_list_array[i].scaling_factor);
+            s.setShape_element_text(shape_list_array[i].shape_text);
 
             shapeList_as_arrayList.add(s);
 

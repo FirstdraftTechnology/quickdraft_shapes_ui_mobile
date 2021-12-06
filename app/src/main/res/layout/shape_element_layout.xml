@@ -19,18 +19,32 @@
 
     <ImageView
         android:padding="2dp"
-        android:id="@+id/doc_image_element"
+        android:id="@+id/rectangle_image_element"
         android:layout_width="100dp"
         android:layout_height="80dp"
         android:layout_gravity="center"
         android:src="@drawable/rectangle_static"
         android:gravity="center"/>
 
-    <TextView
+        <TextView
+            android:textSize="20dp"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:id="@+id/shape_element_scale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint=""
+            android:padding="2dp"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
+            android:scrollbars = "vertical"
+            />
+
+        <TextView
         android:textSize="20dp"
         android:gravity="center"
         android:textColor="@color/black"
-        android:id="@+id/dir_element_view"
+        android:id="@+id/shape_element_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
