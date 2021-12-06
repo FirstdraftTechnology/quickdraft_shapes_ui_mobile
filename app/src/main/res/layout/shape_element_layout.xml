@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/dir_list_id">
+
+    <LinearLayout
+        android:id="@+id/para_without_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="95"
+        android:background="@drawable/rounded_edittext"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="vertical">
+
+    <ImageView
+        android:padding="2dp"
+        android:id="@+id/rectangle_image_element"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:src="@drawable/rectangle_static"
+        android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/scale_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="80"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/shape_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:text="Scale:"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
+                android:scrollbars = "vertical"
+                />
+
+            <TextView
+            android:textSize="20dp"
+            android:layout_weight="20"
+            android:gravity="left"
+            android:textColor="@color/black"
+            android:id="@+id/shape_element_scale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:hint=""
+            android:padding="2dp"
+            android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
+            android:scrollbars = "vertical"
+            />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/shape_text_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textSize="20dp"
+                android:layout_weight="80"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:id="@+id/shape_text_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:text="Text:"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
+                android:scrollbars = "vertical"
+                />
+
+        <TextView
+        android:textSize="20dp"
+        android:layout_weight="20"
+        android:gravity="left"
+        android:textColor="@color/black"
+        android:id="@+id/shape_element_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:hint=""
+        android:padding="2dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
+        android:scrollbars = "vertical"
+        />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
