@@ -78,7 +78,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 connector_string = ShapeUtility.get_connector_status(connector_checkbox);
 
                 RectangleView.s = shape_string;
-
                 RectangleView.multiplication_factor = mScaleFactor;
 
                 lower_limit = lower_limit/RectangleView.multiplication_factor;
@@ -157,6 +156,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
+
 
                 CurrentShapeElement.scaling_factor =
                         (float)RectangleView.base_width_current /

@@ -45,10 +45,10 @@
 
         <Button
             android:id="@+id/ShowShape"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="57dp"
             android:paddingTop="3dp"
-            android:text="Integrate Text"
+            android:text="Integrate Text and Size"
             android:layout_marginLeft="5dp"
             android:background="@color/purple_700"
             tools:layout_editor_absoluteX="25dp"
@@ -101,7 +101,7 @@
 
         <Button
             android:id="@+id/ListView"
-            android:layout_width="125dp"
+            android:layout_width="match_parent"
             android:layout_height="57dp"
             android:paddingTop="3dp"
             android:text="Commit Shape"
