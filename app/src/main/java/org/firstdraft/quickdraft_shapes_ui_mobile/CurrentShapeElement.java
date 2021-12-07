@@ -5,7 +5,7 @@ public class CurrentShapeElement {
     static float base_width;
     static float base_height;
 
-    static float scaling_factor;
+    public static float scaling_factor;
 
     static float horizontal_deviation;
 

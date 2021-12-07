@@ -30,8 +30,10 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     CheckBox connector_checkbox;
     String connector_string;
 
+    Button shape_button;
+
     private ScaleGestureDetector scaleGestureDetector;
-    private float mScaleFactor = 1.0f;
+    public static float mScaleFactor = 1.0f;
 
     private float lower_limit = 0.5f;
     private float upper_limit = 10.0f;
@@ -45,6 +47,33 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
         mScaleFactor = 1.0f;
         addButtonListener();
+
+        addListenerOnEditText();
+    }
+
+
+    public void addListenerOnEditText()
+    {
+        shape_text_view.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                shape_button.setTextColor(Color.WHITE);
+                /*switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        shape_button.setTextColor(Color.WHITE);
+                        return false;
+                    case MotionEvent.ACTION_UP:
+                        v.performClick();
+                        break;
+                    default:
+                        break;
+                }*/
+                return false;
+
+            }
+
+        });
     }
 
     public void addButtonListener()
@@ -52,14 +81,14 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
         Context context = this;
 
-        Button shape_button = (Button) findViewById(R.id.ShowShape);
+        shape_button = (Button) findViewById(R.id.ShowShape);
 
         shape_text_view = (TextView) findViewById(R.id.ShapeText);
         connector_checkbox = (CheckBox) findViewById(R.id.Connector);
 
-        Button transmit_button = (Button) findViewById(R.id.TransmitShape);
+        /*Button transmit_button = (Button) findViewById(R.id.TransmitShape);
         Button append_button = (Button) findViewById(R.id.AppendShape);
-        Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);
+        Button arrange_button = (Button) findViewById(R.id.ArrangeShapes);*/
         Button list_view = (Button) findViewById(R.id.ListView);
 
         shape_text_view.setText(RectangleView.s);
@@ -68,6 +97,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
         drawView = findViewById(R.id.myView);
         drawView.setBackgroundColor(Color.WHITE);
+        shape_button.setTextColor(Color.GREEN);
 
         shape_button.setOnClickListener(new View.OnClickListener() {
 
@@ -78,7 +108,6 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 connector_string = ShapeUtility.get_connector_status(connector_checkbox);
 
                 RectangleView.s = shape_string;
-
                 RectangleView.multiplication_factor = mScaleFactor;
 
                 lower_limit = lower_limit/RectangleView.multiplication_factor;
@@ -94,11 +123,13 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 setContentView(R.layout.activity_main);
                 addButtonListener();
+                addListenerOnEditText();
 
+                shape_button.setTextColor(Color.GREEN);
             }
         });
 
-        transmit_button.setOnClickListener(new View.OnClickListener() {
+        /*transmit_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
@@ -151,15 +182,34 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
 
         list_view.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
 
+
+                CurrentShapeElement.scaling_factor =
+                        (float)RectangleView.base_width_current /
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+
+                TransmitRectangleUtility.add_shape_element();
+
+                RectangleView.s = "";
+                RectangleView.connector = "";
+                RectangleView.multiplication_factor = (float)1.0;
+
+                RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
+                RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
+                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
+
+                mScaleFactor = (float)1.0;
+
                 Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
+
+                FinalizeRectangleActivity.super.finish();
 
             }
         });
@@ -195,6 +245,8 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
             drawView.setScaleX(mScaleFactor);
             drawView.setScaleY(mScaleFactor);
+
+            shape_button.setTextColor(Color.WHITE);
 
             return true;
         }

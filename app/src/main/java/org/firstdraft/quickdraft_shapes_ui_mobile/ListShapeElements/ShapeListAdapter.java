@@ -29,6 +29,11 @@ public class ShapeListAdapter extends BaseAdapter
     public int getCount()
     {
 
+        if(TransmitRectangleUtility.set_array == null)
+        {
+            return 0;
+        }
+
         return TransmitRectangleUtility.set_array.length;
 
     }

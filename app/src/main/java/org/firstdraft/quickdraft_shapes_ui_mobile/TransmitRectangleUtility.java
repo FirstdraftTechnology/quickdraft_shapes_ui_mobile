@@ -6,6 +6,7 @@ import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.Re
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.StringWriter;
+import java.util.ArrayList;
 
 public class TransmitRectangleUtility {
 
@@ -18,13 +19,15 @@ public class TransmitRectangleUtility {
     public static float horizontal_mf = (float)1.0;
 
     public static ShapeElementTag set_array[];
-    static int set_count = 0;
+    public static int set_count = 0;
 
     public static XmlSerializer serializer;
 
     public static void reset_shape_group()
     {
         set_count = 0;
+        set_array = null;
+
         RectangleView.s = "";
         RectangleView.connector = "";
 
@@ -60,7 +63,7 @@ public class TransmitRectangleUtility {
         return set_array[index].distance_mf;
     }
 
-    static void add_shape_element()
+    public static void add_shape_element()
     {
 
         ShapeElementTag set = new ShapeElementTag();
