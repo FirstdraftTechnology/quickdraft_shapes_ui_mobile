@@ -97,6 +97,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
         drawView = findViewById(R.id.myView);
         drawView.setBackgroundColor(Color.WHITE);
+        shape_button.setTextColor(Color.GREEN);
 
         shape_button.setOnClickListener(new View.OnClickListener() {
 
