@@ -177,6 +177,8 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
 
+                FinalizeRectangleActivity.super.finish();
+
             }
         });
 

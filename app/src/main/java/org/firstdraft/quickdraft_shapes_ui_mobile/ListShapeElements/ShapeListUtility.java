@@ -1,6 +1,7 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements;
 
 import org.firstdraft.quickdraft_shapes_ui_mobile.ShapeElementTag;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
 import java.util.ArrayList;
 
@@ -17,8 +18,14 @@ public class ShapeListUtility
             return shapeList_as_arrayList;
         }
 
+        if(TransmitRectangleUtility.set_count == 0)
+        {
+            shapeList_as_arrayList = new ArrayList<>();
+            return shapeList_as_arrayList;
+        }
+
         for(int i = 0;
-            i < shape_list_array.length; i++)
+            i < TransmitRectangleUtility.set_count; i++)
         {
 
             ShapeElementModel s = new ShapeElementModel();

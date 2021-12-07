@@ -86,6 +86,8 @@ public class ShapeListActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
 
+                ShapeListActivity.super.finish();
+
             }
         });
 
