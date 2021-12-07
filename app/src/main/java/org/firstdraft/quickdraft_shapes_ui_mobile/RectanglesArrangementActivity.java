@@ -47,6 +47,8 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
 
+                RectanglesArrangementActivity.super.finish();
+
             }
         });
 
