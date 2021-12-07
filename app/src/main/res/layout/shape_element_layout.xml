@@ -7,6 +7,12 @@
     android:id="@+id/dir_list_id">
 
     <LinearLayout
+        android:id="@+id/para_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+    <LinearLayout
         android:id="@+id/para_without_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -104,7 +110,24 @@
         android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n "
         android:scrollbars = "vertical"
         />
+
         </LinearLayout>
+
+    </LinearLayout>
+
+        <Button
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="top"
+            android:id="@+id/edit_btn"
+            android:layout_weight="5"
+            android:foreground="@drawable/shape_element_edit6"
+            android:background="@drawable/circle_background"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginLeft="5dp"
+            />
+
     </LinearLayout>
 
 </LinearLayout>
