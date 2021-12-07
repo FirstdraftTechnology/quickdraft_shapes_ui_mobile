@@ -30,6 +30,8 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     CheckBox connector_checkbox;
     String connector_string;
 
+    Button shape_button;
+
     private ScaleGestureDetector scaleGestureDetector;
     public static float mScaleFactor = 1.0f;
 
@@ -45,6 +47,33 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
         mScaleFactor = 1.0f;
         addButtonListener();
+
+        addListenerOnEditText();
+    }
+
+
+    public void addListenerOnEditText()
+    {
+        shape_text_view.setOnTouchListener(new View.OnTouchListener()
+        {
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                shape_button.setTextColor(Color.WHITE);
+                /*switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        shape_button.setTextColor(Color.WHITE);
+                        return false;
+                    case MotionEvent.ACTION_UP:
+                        v.performClick();
+                        break;
+                    default:
+                        break;
+                }*/
+                return false;
+
+            }
+
+        });
     }
 
     public void addButtonListener()
@@ -52,7 +81,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
         Context context = this;
 
-        Button shape_button = (Button) findViewById(R.id.ShowShape);
+        shape_button = (Button) findViewById(R.id.ShowShape);
 
         shape_text_view = (TextView) findViewById(R.id.ShapeText);
         connector_checkbox = (CheckBox) findViewById(R.id.Connector);
@@ -93,7 +122,9 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 setContentView(R.layout.activity_main);
                 addButtonListener();
+                addListenerOnEditText();
 
+                shape_button.setTextColor(Color.GREEN);
             }
         });
 
@@ -213,6 +244,8 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
             drawView.setScaleX(mScaleFactor);
             drawView.setScaleY(mScaleFactor);
+
+            shape_button.setTextColor(Color.WHITE);
 
             return true;
         }
