@@ -149,6 +149,7 @@ public class TransmitRectangleUtility {
         Intent intent = new Intent(context, FinalizeRectangleActivity.class);
         calling_activity.startActivity(intent);
 
+        calling_activity.finish();
     }
 
     static String get_xml()
