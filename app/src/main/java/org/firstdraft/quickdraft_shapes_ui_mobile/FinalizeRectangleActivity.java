@@ -35,11 +35,11 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     private ScaleGestureDetector scaleGestureDetector;
     public static float mScaleFactor = 1.0f;
 
-    static final float LOWER_LIMIT_INIT = 0.5f;
-    static final float UPPER_LIMIT_INIT = 10.0f;
+    public static final float LOWER_LIMIT_INIT = 0.5f;
+    public static final float UPPER_LIMIT_INIT = 10.0f;
 
-    static float lower_limit = LOWER_LIMIT_INIT;
-    static float upper_limit = UPPER_LIMIT_INIT;
+    public static float lower_limit = LOWER_LIMIT_INIT;
+    public static float upper_limit = UPPER_LIMIT_INIT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
