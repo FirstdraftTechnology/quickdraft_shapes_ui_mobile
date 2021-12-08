@@ -28,6 +28,7 @@ public class ShapeListActivity extends AppCompatActivity {
 
         ShapeListAdapter adapter;
 
+        ShapeListUtility.sla_instance = this;
         ArrayList<ShapeElementModel> shapeList_as_arrayList =
                 ShapeListUtility.convert_elementArray_to_arrayList(
                         TransmitRectangleUtility.set_array);

@@ -7,6 +7,9 @@ import java.util.ArrayList;
 
 public class ShapeListUtility
 {
+
+    static ShapeListActivity sla_instance;
+
     public static ArrayList<ShapeElementModel> convert_elementArray_to_arrayList
             (ShapeElementTag[] shape_list_array)
     {

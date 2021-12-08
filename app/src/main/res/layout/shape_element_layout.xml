@@ -119,7 +119,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_gravity="top"
-            android:id="@+id/edit_btn"
+            android:id="@+id/shape_edit_btn"
             android:layout_weight="5"
             android:foreground="@drawable/shape_element_edit6"
             android:background="@drawable/circle_background"
