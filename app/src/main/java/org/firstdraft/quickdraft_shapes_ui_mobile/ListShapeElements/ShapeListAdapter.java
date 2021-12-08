@@ -88,11 +88,10 @@ public class ShapeListAdapter extends BaseAdapter
             @Override
             public void onClick(View view)
             {
-                CurrentShapeElement.scaling_factor =
+                /*CurrentShapeElement.scaling_factor =
                         (float) RectangleView.base_width_current /
                                 (float)RectangleView.RECTANGLE_BASE_WIDTH;
 
-                //TransmitRectangleUtility.add_shape_element();
 
                 RectangleView.s = "";
                 RectangleView.connector = "";
@@ -105,7 +104,10 @@ public class ShapeListAdapter extends BaseAdapter
                 FinalizeRectangleActivity.mScaleFactor = (float)1.0;
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
-                ShapeListUtility.sla_instance.startActivity(intent);
+                ShapeListUtility.sla_instance.startActivity(intent);*/
+
+                TransmitRectangleUtility.launch_edit_shape_element
+                        (ShapeListUtility.sla_instance, context, position);
 
             }
         });

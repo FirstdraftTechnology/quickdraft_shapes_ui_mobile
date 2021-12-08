@@ -24,7 +24,7 @@ public class RectangleView
 
     public static String s = "";
     public static float multiplication_factor = (float)1.0;
-    public static String connector =  "";
+    public static String connector_output =  "";
 
     EditText ed;
 
@@ -76,7 +76,7 @@ public class RectangleView
         CurrentShapeElement.horizontal_deviation = text_width;
 
         CurrentShapeElement.shape_text = s;
-        CurrentShapeElement.connector = connector;
+        CurrentShapeElement.connector = connector_output;
 
         /*TransmitRectangleUtility.add_shape_element(RECTANGLE_BASE_WIDTH, RECTANGLE_BASE_HEIGHT,
                                                     text_width, s);*/

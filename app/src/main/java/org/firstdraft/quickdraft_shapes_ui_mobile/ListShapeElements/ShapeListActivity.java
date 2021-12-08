@@ -75,7 +75,7 @@ public class ShapeListActivity extends AppCompatActivity {
                 //TransmitRectangleUtility.add_shape_element();
 
                 RectangleView.s = "";
-                RectangleView.connector = "";
+                RectangleView.connector_output = "";
                 RectangleView.multiplication_factor = (float)1.0;
 
                 RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;

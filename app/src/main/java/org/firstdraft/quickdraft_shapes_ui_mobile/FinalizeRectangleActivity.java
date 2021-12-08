@@ -28,7 +28,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     TextView shape_text_view;
 
     CheckBox connector_checkbox;
-    String connector_string;
+    static String connector_string;
 
     Button shape_button;
 
@@ -115,7 +115,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 mScaleFactor = 1.0f;
 
-                RectangleView.connector = connector_string;
+                RectangleView.connector_output = connector_string;
 
                 //drawView = new RectangleView(context);
                 //drawView = findViewById(R.id.myView);
@@ -197,7 +197,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 TransmitRectangleUtility.add_shape_element();
 
                 RectangleView.s = "";
-                RectangleView.connector = "";
+                RectangleView.connector_output = "";
                 RectangleView.multiplication_factor = (float)1.0;
 
                 RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
