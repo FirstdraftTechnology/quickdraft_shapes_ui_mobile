@@ -28,7 +28,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     TextView shape_text_view;
 
     CheckBox connector_checkbox;
-    static String connector_string;
+    public static String connector_string;
 
     Button shape_button;
 

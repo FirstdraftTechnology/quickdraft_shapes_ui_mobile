@@ -84,6 +84,8 @@ public class ShapeListActivity extends AppCompatActivity {
 
                 FinalizeRectangleActivity.mScaleFactor = (float)1.0;
 
+                FinalizeRectangleActivity.connector_string = "false";
+
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
 
