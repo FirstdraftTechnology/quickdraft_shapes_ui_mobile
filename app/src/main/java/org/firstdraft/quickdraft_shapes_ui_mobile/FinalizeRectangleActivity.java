@@ -35,8 +35,11 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     private ScaleGestureDetector scaleGestureDetector;
     public static float mScaleFactor = 1.0f;
 
-    private float lower_limit = 0.5f;
-    private float upper_limit = 10.0f;
+    static final float LOWER_LIMIT_INIT = 0.5f;
+    static final float UPPER_LIMIT_INIT = 10.0f;
+
+    static float lower_limit = LOWER_LIMIT_INIT;
+    static float upper_limit = UPPER_LIMIT_INIT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -194,7 +197,15 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                         (float)RectangleView.base_width_current /
                                 (float)RectangleView.RECTANGLE_BASE_WIDTH;
 
-                TransmitRectangleUtility.add_shape_element();
+                if(TransmitRectangleUtility.edit_operation == false)
+                {
+                    TransmitRectangleUtility.add_shape_element();
+                }
+                else
+                {
+                    TransmitRectangleUtility.edit_shape_element_commit
+                            (TransmitRectangleUtility.edit_position);
+                }
 
                 RectangleView.s = "";
                 RectangleView.connector_output = "";

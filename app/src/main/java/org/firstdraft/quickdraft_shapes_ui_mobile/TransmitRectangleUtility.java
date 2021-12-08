@@ -99,6 +99,23 @@ public class TransmitRectangleUtility {
 
     }
 
+    public static void edit_shape_element_commit(int position)
+    {
+
+        ShapeElementTag set = set_array[position];
+
+        set.base_width = CurrentShapeElement.base_width;
+        set.base_height = CurrentShapeElement.base_height;
+
+        set.horizontal_deviation = CurrentShapeElement.horizontal_deviation;
+        set.shape_text = CurrentShapeElement.shape_text;
+
+        set.connector = CurrentShapeElement.connector;
+        set.scaling_factor = CurrentShapeElement.scaling_factor;
+
+        edit_operation = false;
+    }
+
     public static void launch_edit_shape_element(Activity calling_activity,
                                                  Context context,
                                                  int position)
@@ -123,7 +140,11 @@ public class TransmitRectangleUtility {
         RectangleView.text_size_base = (int)((float)RectangleView.TEXT_BASE_SIZE *
                                                         scaling_factor);
 
-        FinalizeRectangleActivity.mScaleFactor = (float)1.0;
+        FinalizeRectangleActivity.lower_limit = FinalizeRectangleActivity.LOWER_LIMIT_INIT
+                                                /scaling_factor;
+        FinalizeRectangleActivity.upper_limit = FinalizeRectangleActivity.UPPER_LIMIT_INIT
+                                                /scaling_factor;
+        FinalizeRectangleActivity.mScaleFactor = 1.0f;
 
         Intent intent = new Intent(context, FinalizeRectangleActivity.class);
         calling_activity.startActivity(intent);

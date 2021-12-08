@@ -68,9 +68,9 @@ public class ShapeListActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                CurrentShapeElement.scaling_factor =
+                /*CurrentShapeElement.scaling_factor =
                         (float) RectangleView.base_width_current /
-                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;*/
 
                 //TransmitRectangleUtility.add_shape_element();
 
