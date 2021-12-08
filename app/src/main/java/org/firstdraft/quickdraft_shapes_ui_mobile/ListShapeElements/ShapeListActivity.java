@@ -86,6 +86,9 @@ public class ShapeListActivity extends AppCompatActivity {
 
                 FinalizeRectangleActivity.connector_string = "false";
 
+                FinalizeRectangleActivity.lower_limit = FinalizeRectangleActivity.LOWER_LIMIT_INIT;
+                FinalizeRectangleActivity.upper_limit = FinalizeRectangleActivity.UPPER_LIMIT_INIT;
+
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);
 
