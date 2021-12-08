@@ -1,13 +1,18 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.CurrentShapeElement;
+import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
 import org.firstdraft.draw_transmit_shapes.R;
@@ -77,6 +82,36 @@ public class ShapeListAdapter extends BaseAdapter
         holder.shape_scale.setText(current_element.getShape_element_scale());
         holder.shape_text.setText(current_element.getShape_element_text());
 
+        holder.editButton = (Button) convertView.findViewById(R.id.shape_edit_btn);
+
+        holder.editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                /*CurrentShapeElement.scaling_factor =
+                        (float) RectangleView.base_width_current /
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+
+
+                RectangleView.s = "";
+                RectangleView.connector = "";
+                RectangleView.multiplication_factor = (float)1.0;
+
+                RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
+                RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
+                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
+
+                FinalizeRectangleActivity.mScaleFactor = (float)1.0;
+
+                Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                ShapeListUtility.sla_instance.startActivity(intent);*/
+
+                TransmitRectangleUtility.launch_edit_shape_element
+                        (ShapeListUtility.sla_instance, context, position);
+
+            }
+        });
+
         return convertView;
 
     }
@@ -84,6 +119,8 @@ public class ShapeListAdapter extends BaseAdapter
     private class ViewHolder {
         protected TextView shape_scale;
         protected TextView shape_text;
+
+        protected Button editButton;
     }
 
 }

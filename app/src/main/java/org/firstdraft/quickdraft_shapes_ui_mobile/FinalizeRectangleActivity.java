@@ -28,15 +28,18 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
     TextView shape_text_view;
 
     CheckBox connector_checkbox;
-    String connector_string;
+    public static String connector_string;
 
     Button shape_button;
 
     private ScaleGestureDetector scaleGestureDetector;
     public static float mScaleFactor = 1.0f;
 
-    private float lower_limit = 0.5f;
-    private float upper_limit = 10.0f;
+    static final float LOWER_LIMIT_INIT = 0.5f;
+    static final float UPPER_LIMIT_INIT = 10.0f;
+
+    static float lower_limit = LOWER_LIMIT_INIT;
+    static float upper_limit = UPPER_LIMIT_INIT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,7 +118,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 mScaleFactor = 1.0f;
 
-                RectangleView.connector = connector_string;
+                RectangleView.connector_output = connector_string;
 
                 //drawView = new RectangleView(context);
                 //drawView = findViewById(R.id.myView);
@@ -194,10 +197,18 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                         (float)RectangleView.base_width_current /
                                 (float)RectangleView.RECTANGLE_BASE_WIDTH;
 
-                TransmitRectangleUtility.add_shape_element();
+                if(TransmitRectangleUtility.edit_operation == false)
+                {
+                    TransmitRectangleUtility.add_shape_element();
+                }
+                else
+                {
+                    TransmitRectangleUtility.edit_shape_element_commit
+                            (TransmitRectangleUtility.edit_position);
+                }
 
                 RectangleView.s = "";
-                RectangleView.connector = "";
+                RectangleView.connector_output = "";
                 RectangleView.multiplication_factor = (float)1.0;
 
                 RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;

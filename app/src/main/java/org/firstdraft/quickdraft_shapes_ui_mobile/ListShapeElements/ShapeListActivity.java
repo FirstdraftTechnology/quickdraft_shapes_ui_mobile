@@ -28,6 +28,7 @@ public class ShapeListActivity extends AppCompatActivity {
 
         ShapeListAdapter adapter;
 
+        ShapeListUtility.sla_instance = this;
         ArrayList<ShapeElementModel> shapeList_as_arrayList =
                 ShapeListUtility.convert_elementArray_to_arrayList(
                         TransmitRectangleUtility.set_array);
@@ -67,14 +68,14 @@ public class ShapeListActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                CurrentShapeElement.scaling_factor =
+                /*CurrentShapeElement.scaling_factor =
                         (float) RectangleView.base_width_current /
-                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;*/
 
                 //TransmitRectangleUtility.add_shape_element();
 
                 RectangleView.s = "";
-                RectangleView.connector = "";
+                RectangleView.connector_output = "";
                 RectangleView.multiplication_factor = (float)1.0;
 
                 RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
@@ -82,6 +83,8 @@ public class ShapeListActivity extends AppCompatActivity {
                 RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
 
                 FinalizeRectangleActivity.mScaleFactor = (float)1.0;
+
+                FinalizeRectangleActivity.connector_string = "false";
 
                 Intent intent = new Intent(context, FinalizeRectangleActivity.class);
                 startActivity(intent);

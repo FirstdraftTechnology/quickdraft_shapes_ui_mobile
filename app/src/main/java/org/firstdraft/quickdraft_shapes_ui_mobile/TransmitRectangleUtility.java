@@ -1,7 +1,11 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.util.Xml;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
 import org.xmlpull.v1.XmlSerializer;
 
@@ -23,13 +27,16 @@ public class TransmitRectangleUtility {
 
     public static XmlSerializer serializer;
 
+    public static boolean edit_operation = false;
+    public static int edit_position = 0;
+
     public static void reset_shape_group()
     {
         set_count = 0;
         set_array = null;
 
         RectangleView.s = "";
-        RectangleView.connector = "";
+        RectangleView.connector_output = "";
 
         RectangleArrangementUtility.initial_commit_done = false;
         RectangleArrangementUtility.last_commit_index = 0;
@@ -89,6 +96,58 @@ public class TransmitRectangleUtility {
 
         set_array = newarr;
         set_count++;
+
+    }
+
+    public static void edit_shape_element_commit(int position)
+    {
+
+        ShapeElementTag set = set_array[position];
+
+        set.base_width = CurrentShapeElement.base_width;
+        set.base_height = CurrentShapeElement.base_height;
+
+        set.horizontal_deviation = CurrentShapeElement.horizontal_deviation;
+        set.shape_text = CurrentShapeElement.shape_text;
+
+        set.connector = CurrentShapeElement.connector;
+        set.scaling_factor = CurrentShapeElement.scaling_factor;
+
+        edit_operation = false;
+    }
+
+    public static void launch_edit_shape_element(Activity calling_activity,
+                                                 Context context,
+                                                 int position)
+    {
+
+        ShapeElementTag set = set_array[position];
+
+        edit_operation = true;
+        edit_position = position;
+
+        float scaling_factor = set.scaling_factor;
+
+        RectangleView.s = set.shape_text;
+        FinalizeRectangleActivity.connector_string = set.connector;
+
+        RectangleView.multiplication_factor = (float)1.0;
+
+        RectangleView.base_width_current = (int)((float)RectangleView.RECTANGLE_BASE_WIDTH *
+                                                        scaling_factor);
+        RectangleView.base_height_current = (int)((float)RectangleView.RECTANGLE_BASE_HEIGHT *
+                                                        scaling_factor);
+        RectangleView.text_size_base = (int)((float)RectangleView.TEXT_BASE_SIZE *
+                                                        scaling_factor);
+
+        FinalizeRectangleActivity.lower_limit = FinalizeRectangleActivity.LOWER_LIMIT_INIT
+                                                /scaling_factor;
+        FinalizeRectangleActivity.upper_limit = FinalizeRectangleActivity.UPPER_LIMIT_INIT
+                                                /scaling_factor;
+        FinalizeRectangleActivity.mScaleFactor = 1.0f;
+
+        Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+        calling_activity.startActivity(intent);
 
     }
 
