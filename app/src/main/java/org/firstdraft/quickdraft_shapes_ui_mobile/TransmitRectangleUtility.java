@@ -86,6 +86,15 @@ public class TransmitRectangleUtility {
 
         int current_len = set_count;
 
+        if(set_count%2 == 0)
+        {
+            set.shape_type="ellipse";
+        }
+        else
+        {
+            set.shape_type = "rectangle";
+        }
+
         ShapeElementTag newarr[] = new ShapeElementTag[current_len + 1];
 
         for (int i = 0; i < current_len; i++) {
