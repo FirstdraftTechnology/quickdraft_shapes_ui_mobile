@@ -5,12 +5,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Xml;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.StringWriter;
-import java.util.ArrayList;
 
 public class TransmitRectangleUtility {
 
@@ -70,7 +68,7 @@ public class TransmitRectangleUtility {
         return set_array[index].distance_mf;
     }
 
-    public static void add_shape_element()
+    public static void add_shape_element(int shape_type)
     {
 
         ShapeElementTag set = new ShapeElementTag();
@@ -86,7 +84,7 @@ public class TransmitRectangleUtility {
 
         int current_len = set_count;
 
-        if(set_count%2 == 0)
+        if(shape_type == FinalizeShapeActivity.SHAPE_ELLIPSE)
         {
             set.shape_type="ellipse";
         }
@@ -138,7 +136,7 @@ public class TransmitRectangleUtility {
         float scaling_factor = set.scaling_factor;
 
         RectangleView.s = set.shape_text;
-        FinalizeRectangleActivity.connector_string = set.connector;
+        FinalizeShapeActivity.connector_string = set.connector;
 
         RectangleView.multiplication_factor = (float)1.0;
 
@@ -149,13 +147,13 @@ public class TransmitRectangleUtility {
         RectangleView.text_size_base = (int)((float)RectangleView.TEXT_BASE_SIZE *
                                                         scaling_factor);
 
-        FinalizeRectangleActivity.lower_limit = FinalizeRectangleActivity.LOWER_LIMIT_INIT
+        FinalizeShapeActivity.lower_limit = FinalizeShapeActivity.LOWER_LIMIT_INIT
                                                 /scaling_factor;
-        FinalizeRectangleActivity.upper_limit = FinalizeRectangleActivity.UPPER_LIMIT_INIT
+        FinalizeShapeActivity.upper_limit = FinalizeShapeActivity.UPPER_LIMIT_INIT
                                                 /scaling_factor;
-        FinalizeRectangleActivity.mScaleFactor = 1.0f;
+        FinalizeShapeActivity.mScaleFactor = 1.0f;
 
-        Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+        Intent intent = new Intent(context, FinalizeShapeActivity.class);
         calling_activity.startActivity(intent);
 
         calling_activity.finish();

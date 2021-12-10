@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity" />
-        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity"
+        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity"
             android:windowSoftInputMode="adjustResize"/>
     </application>
 

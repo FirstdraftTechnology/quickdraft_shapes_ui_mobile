@@ -10,8 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import org.firstdraft.draw_transmit_shapes.R;
-import org.firstdraft.quickdraft_shapes_ui_mobile.CurrentShapeElement;
-import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity;
@@ -82,14 +81,14 @@ public class ShapeListActivity extends AppCompatActivity {
                 RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
                 RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
 
-                FinalizeRectangleActivity.mScaleFactor = (float)1.0;
+                FinalizeShapeActivity.mScaleFactor = (float)1.0;
 
-                FinalizeRectangleActivity.connector_string = "false";
+                FinalizeShapeActivity.connector_string = "false";
 
-                FinalizeRectangleActivity.lower_limit = FinalizeRectangleActivity.LOWER_LIMIT_INIT;
-                FinalizeRectangleActivity.upper_limit = FinalizeRectangleActivity.UPPER_LIMIT_INIT;
+                FinalizeShapeActivity.lower_limit = FinalizeShapeActivity.LOWER_LIMIT_INIT;
+                FinalizeShapeActivity.upper_limit = FinalizeShapeActivity.UPPER_LIMIT_INIT;
 
-                Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                Intent intent = new Intent(context, FinalizeShapeActivity.class);
                 startActivity(intent);
 
                 ShapeListActivity.super.finish();

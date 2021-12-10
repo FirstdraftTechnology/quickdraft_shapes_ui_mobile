@@ -46,7 +46,7 @@ public class UserFileNameActivity extends AppCompatActivity {
 
                 TransmitRectangleUtility.reset_shape_group();
 
-                /*Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                /*Intent intent = new Intent(context, FinalizeShapeActivity.class);
                 startActivity(intent);*/
 
                 Intent intent = new Intent(context, ShapeListActivity.class);

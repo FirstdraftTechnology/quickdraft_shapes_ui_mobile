@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:weightSum="100"
-    tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
+    tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
     <org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView
         android:id="@+id/myView"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="50"
         android:orientation="vertical"
-        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
+        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
         <EditText
             android:id="@+id/ShapeText"

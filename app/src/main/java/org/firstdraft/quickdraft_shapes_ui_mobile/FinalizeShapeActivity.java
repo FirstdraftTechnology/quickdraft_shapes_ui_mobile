@@ -14,14 +14,9 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import org.firstdraft.draw_transmit_shapes.R;
-import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeElementModel;
 import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListAdapter;
-import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListUtility;
 
-import java.util.ArrayList;
-
-public class FinalizeRectangleActivity extends AppCompatActivity {
+public class FinalizeShapeActivity extends AppCompatActivity {
 
     RectangleView drawView;
 
@@ -40,6 +35,10 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
     public static float lower_limit = LOWER_LIMIT_INIT;
     public static float upper_limit = UPPER_LIMIT_INIT;
+
+    public static final int SHAPE_RECTANGLE = 0;
+    public static final int SHAPE_ELLIPSE = 1;
+    public static int shape_type = SHAPE_RECTANGLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -170,7 +169,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 mScaleFactor = (float)1.0;
 
-                Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                Intent intent = new Intent(context, FinalizeShapeActivity.class);
                 startActivity(intent);
 
             }
@@ -199,7 +198,15 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
 
                 if(TransmitRectangleUtility.edit_operation == false)
                 {
-                    TransmitRectangleUtility.add_shape_element();
+                    if(TransmitRectangleUtility.set_count % 2 == 0)
+                    {
+                        shape_type = SHAPE_ELLIPSE;
+                    }
+                    else
+                    {
+                        shape_type = SHAPE_RECTANGLE;
+                    }
+                    TransmitRectangleUtility.add_shape_element(shape_type);
                 }
                 else
                 {
@@ -220,7 +227,7 @@ public class FinalizeRectangleActivity extends AppCompatActivity {
                 Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
 
-                FinalizeRectangleActivity.super.finish();
+                FinalizeShapeActivity.super.finish();
 
             }
         });
