@@ -111,17 +111,36 @@ public class FinalizeShapeActivity extends AppCompatActivity {
     }
 
     public void set_selected_shape_params(String shape_string,
-                                          float mScaleFactor)
+                                          float mScaleFactor,
+                                          String connector_string)
     {
         if(SelectShapeUtility.shape_type == SelectShapeUtility.SHAPE_RECTANGLE)
         {
             RectangleView.s = shape_string;
             RectangleView.multiplication_factor = mScaleFactor;
+            RectangleView.connector_output = connector_string;
         }
         if(SelectShapeUtility.shape_type == SelectShapeUtility.SHAPE_ELLIPSE)
         {
             EllipseView.s = shape_string;
             EllipseView.multiplication_factor = mScaleFactor;
+            EllipseView.connector_output = connector_string;
+        }
+
+    }
+    public void set_scaling_factor()
+    {
+        if(SelectShapeUtility.shape_type == SelectShapeUtility.SHAPE_RECTANGLE)
+        {
+            CurrentShapeElement.scaling_factor =
+                    (float)RectangleView.base_width_current /
+                            (float)RectangleView.RECTANGLE_BASE_WIDTH;
+        }
+        if(SelectShapeUtility.shape_type == SelectShapeUtility.SHAPE_ELLIPSE)
+        {
+            CurrentShapeElement.scaling_factor =
+                    (float)EllipseView.base_width_current /
+                            (float)EllipseView.ELLIPSE_BASE_WIDTH;
         }
 
     }
@@ -166,14 +185,15 @@ public class FinalizeShapeActivity extends AppCompatActivity {
                 RectangleView.multiplication_factor = mScaleFactor;*/
 
                 set_selected_shape_params(shape_string,
-                                          mScaleFactor);
+                                          mScaleFactor,
+                                          connector_string);
 
                 lower_limit = lower_limit/RectangleView.multiplication_factor;
                 upper_limit = upper_limit/RectangleView.multiplication_factor;
 
                 mScaleFactor = 1.0f;
 
-                RectangleView.connector_output = connector_string;
+                //RectangleView.connector_output = connector_string;
 
                 //drawView = new RectangleView(context);
                 //drawView = findViewById(R.id.myView);
@@ -248,9 +268,11 @@ public class FinalizeShapeActivity extends AppCompatActivity {
             public void onClick(View arg0) {
 
 
-                CurrentShapeElement.scaling_factor =
+                /*CurrentShapeElement.scaling_factor =
                         (float)RectangleView.base_width_current /
-                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
+                                (float)RectangleView.RECTANGLE_BASE_WIDTH;*/
+
+                 set_scaling_factor();
 
                 if(TransmitRectangleUtility.edit_operation == false)
                 {
