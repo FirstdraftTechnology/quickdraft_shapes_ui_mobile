@@ -13,6 +13,8 @@ import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
@@ -73,13 +75,15 @@ public class ShapeListActivity extends AppCompatActivity {
 
                 //TransmitRectangleUtility.add_shape_element();
 
-                RectangleView.s = "";
+                /*RectangleView.s = "";
                 RectangleView.connector_output = "";
                 RectangleView.multiplication_factor = (float)1.0;
 
                 RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
                 RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
-                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
+                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;*/
+
+                SelectShapeUtility.reset_views();
 
                 FinalizeShapeActivity.mScaleFactor = (float)1.0;
 
@@ -88,7 +92,7 @@ public class ShapeListActivity extends AppCompatActivity {
                 FinalizeShapeActivity.lower_limit = FinalizeShapeActivity.LOWER_LIMIT_INIT;
                 FinalizeShapeActivity.upper_limit = FinalizeShapeActivity.UPPER_LIMIT_INIT;
 
-                Intent intent = new Intent(context, FinalizeShapeActivity.class);
+                Intent intent = new Intent(context, SelectShapeActivity.class);
                 startActivity(intent);
 
                 ShapeListActivity.super.finish();

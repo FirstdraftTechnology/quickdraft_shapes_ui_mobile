@@ -9,7 +9,15 @@
     tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
     <org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView
-        android:id="@+id/myView"
+        android:id="@+id/RectangleViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="50"
+        android:layout_gravity="center"
+        android:layout_above="@id/linear"/>
+
+    <org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.EllipseView
+        android:id="@+id/EllipseViewId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="50"

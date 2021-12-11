@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.util.Xml;
 
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.StringWriter;
@@ -15,8 +16,9 @@ public class TransmitRectangleUtility {
     static String file_name = "";
     static String user_name = "";
 
-    static int canvas_width;
-    static int canvas_height;
+    public static int canvas_width;
+    public static int canvas_height;
+
     public static float vertical_mf = (float)1.0;
     public static float horizontal_mf = (float)1.0;
 
@@ -84,7 +86,7 @@ public class TransmitRectangleUtility {
 
         int current_len = set_count;
 
-        if(shape_type == FinalizeShapeActivity.SHAPE_ELLIPSE)
+        if(shape_type == SelectShapeUtility.SHAPE_ELLIPSE)
         {
             set.shape_type="ellipse";
         }
