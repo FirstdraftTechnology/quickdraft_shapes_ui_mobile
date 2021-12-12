@@ -5,7 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Xml;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.EllipseView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.xmlpull.v1.XmlSerializer;
 
@@ -108,6 +110,7 @@ public class TransmitRectangleUtility {
 
     }
 
+    //Assumption is shape_type will not change
     public static void edit_shape_element_commit(int position)
     {
 
@@ -137,17 +140,30 @@ public class TransmitRectangleUtility {
 
         float scaling_factor = set.scaling_factor;
 
-        RectangleView.s = set.shape_text;
+        //RectangleView.s = set.shape_text;
         FinalizeShapeActivity.connector_string = set.connector;
 
-        RectangleView.multiplication_factor = (float)1.0;
+        /*RectangleView.multiplication_factor = (float)1.0;
 
         RectangleView.base_width_current = (int)((float)RectangleView.RECTANGLE_BASE_WIDTH *
                                                         scaling_factor);
         RectangleView.base_height_current = (int)((float)RectangleView.RECTANGLE_BASE_HEIGHT *
                                                         scaling_factor);
         RectangleView.text_size_base = (int)((float)RectangleView.TEXT_BASE_SIZE *
-                                                        scaling_factor);
+                                                        scaling_factor);*/
+
+        int shape_type_enum = SelectShapeUtility.string_to_shape_type(set.shape_type);
+        if(shape_type_enum == SelectShapeUtility.SHAPE_RECTANGLE)
+        {
+            ShapeUtility.set_rectangle_view_params(scaling_factor,
+                                                    set.shape_text);
+        }
+        else if(shape_type_enum == SelectShapeUtility.SHAPE_ELLIPSE)
+        {
+            ShapeUtility.set_ellipse_view_params(scaling_factor,
+                                                    set.shape_text);
+        }
+        SelectShapeUtility.shape_type = shape_type_enum;
 
         FinalizeShapeActivity.lower_limit = FinalizeShapeActivity.LOWER_LIMIT_INIT
                                                 /scaling_factor;

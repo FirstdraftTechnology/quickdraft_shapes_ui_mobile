@@ -40,6 +40,20 @@ public class SelectShapeUtility
         }
     }
 
+    public static int string_to_shape_type(String shape_type_string)
+    {
+        if(shape_type_string == "rectangle")
+        {
+            return SHAPE_RECTANGLE;
+        }
+        else if(shape_type_string == "ellipse")
+        {
+            return SHAPE_ELLIPSE;
+        }
+
+        return SHAPE_RECTANGLE; //default
+    }
+
     public static String get_current_shape_string()
     {
 
