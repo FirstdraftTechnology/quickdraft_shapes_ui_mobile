@@ -1,6 +1,6 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 public class ShapeArrangementUtility
 {
@@ -80,16 +80,16 @@ public class ShapeArrangementUtility
             float new_distance_mf
                     = (float) ShapeArrangementParams.shape_distance_array[i - 1]
                     / (float) ShapeArrangementParams.shape_distance_initial;
-            TransmitRectangleUtility.update_distance_mf(i-1,new_distance_mf);
+            TransmitShapeGroupUtility.update_distance_mf(i-1,new_distance_mf);
 
         }
 
         ShapeArrangementUtility.initial_commit_done = true;
         last_commit_index = ShapeArrangementParams.shape_count - 1;
 
-        TransmitRectangleUtility.vertical_mf = (float) ShapeArrangementParams.shape_top /
+        TransmitShapeGroupUtility.vertical_mf = (float) ShapeArrangementParams.shape_top /
                 (float) ShapeArrangementParams.shape_top_initial;
-        TransmitRectangleUtility.horizontal_mf = (float) ShapeArrangementParams.shape_left_start/
+        TransmitShapeGroupUtility.horizontal_mf = (float) ShapeArrangementParams.shape_left_start/
                 (float) ShapeArrangementParams.shape_left_start_initial;
     }
 

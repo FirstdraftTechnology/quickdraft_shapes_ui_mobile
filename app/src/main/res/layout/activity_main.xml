@@ -8,7 +8,7 @@
     android:weightSum="100"
     tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
-    <org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView
+    <org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.RectangleView
         android:id="@+id/RectangleViewId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

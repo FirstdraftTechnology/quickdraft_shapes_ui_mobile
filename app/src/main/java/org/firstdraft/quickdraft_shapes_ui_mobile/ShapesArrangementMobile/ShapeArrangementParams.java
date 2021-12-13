@@ -4,7 +4,7 @@ import android.util.Log;
 
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.ShapeUtility;
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 public class ShapeArrangementParams {
 
@@ -45,7 +45,7 @@ public class ShapeArrangementParams {
         {
             String summary_text = ShapeArrangementUtility.
                                     get_summary_string
-                                            (TransmitRectangleUtility.set_array[i].shape_text);
+                                            (TransmitShapeGroupUtility.set_array[i].shape_text);
 
             shape_string_array[i] = summary_text;
 
@@ -60,7 +60,7 @@ public class ShapeArrangementParams {
             shape_width_array[i] = shape_width + (int)text_width;
 
             connector[i] = ShapeUtility.convert_connector_status
-                    (TransmitRectangleUtility.set_array[i].connector);
+                    (TransmitShapeGroupUtility.set_array[i].connector);
 
         }
 
@@ -90,7 +90,7 @@ public class ShapeArrangementParams {
             return;
         }*/
 
-        shape_count = TransmitRectangleUtility.set_array.length;
+        shape_count = TransmitShapeGroupUtility.set_array.length;
 
         shape_distance_array = new int [shape_count];
         shape_left_array = new int [shape_count];
@@ -108,19 +108,19 @@ public class ShapeArrangementParams {
         else
         {
             shape_distance_array[0] = (int)
-                    (TransmitRectangleUtility.set_array[0].distance_mf
+                    (TransmitShapeGroupUtility.set_array[0].distance_mf
                             * shape_distance_initial);
 
             //Parameterize later
             shape_left_array[0] = shape_left_start;
 
             shape_top =
-                    (int)(shape_top_initial * TransmitRectangleUtility.vertical_mf);
+                    (int)(shape_top_initial * TransmitShapeGroupUtility.vertical_mf);
 
         }
 
         shape_type[0] = SelectShapeUtility.string_to_shape_type
-                (TransmitRectangleUtility.set_array[0].shape_type);
+                (TransmitShapeGroupUtility.set_array[0].shape_type);
 
         //rectangle_left_array[0] = rect_left_start;
         //rectangle_top = rect_top_initial;
@@ -134,13 +134,13 @@ public class ShapeArrangementParams {
             else
             {
                 shape_distance_array[i] = (int)
-                        (TransmitRectangleUtility.set_array[i].distance_mf
+                        (TransmitShapeGroupUtility.set_array[i].distance_mf
                                                 * shape_distance_initial);
 
             }
 
             shape_type[i] = SelectShapeUtility.string_to_shape_type
-                    (TransmitRectangleUtility.set_array[i].shape_type);
+                    (TransmitShapeGroupUtility.set_array[i].shape_type);
 
             /*rectangle_left_array[i] = rectangle_left_array[i - 1] +
                     (rect_width + rectangle_distance_array[i-1]);*/

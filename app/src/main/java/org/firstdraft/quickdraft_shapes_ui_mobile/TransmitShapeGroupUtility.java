@@ -5,13 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Xml;
 
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.RectangleView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.xmlpull.v1.XmlSerializer;
 
 import java.io.StringWriter;
 
-public class TransmitRectangleUtility {
+public class TransmitShapeGroupUtility {
 
     static String file_name = "";
     static String user_name = "";
@@ -191,14 +192,14 @@ public class TransmitRectangleUtility {
 
             serializer.attribute("", "file_name", file_name);
             serializer.attribute("", "canvas_width",
-                                    Integer.toString(TransmitRectangleUtility.canvas_width));
+                                    Integer.toString(TransmitShapeGroupUtility.canvas_width));
             serializer.attribute("", "canvas_height",
-                    Integer.toString(TransmitRectangleUtility.canvas_height));
+                    Integer.toString(TransmitShapeGroupUtility.canvas_height));
 
             serializer.attribute("", "vertical_mf",
-                    Float.toString(TransmitRectangleUtility.vertical_mf));
+                    Float.toString(TransmitShapeGroupUtility.vertical_mf));
             serializer.attribute("", "horizontal_mf",
-                    Float.toString(TransmitRectangleUtility.horizontal_mf));
+                    Float.toString(TransmitShapeGroupUtility.horizontal_mf));
 
             create_shape_element_wrapper(serializer);
 

@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity" />
+        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupActivity" />
         <activity
             android:name="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity"
             android:windowSoftInputMode="adjustResize" />

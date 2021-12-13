@@ -5,12 +5,10 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
-import android.widget.EditText;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.EllipseView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 
 public class ShapesArragementView extends AppCompatTextView {
@@ -147,18 +145,18 @@ public class ShapesArragementView extends AppCompatTextView {
 
         boolean connector = true;
 
-        int length = TransmitRectangleUtility.set_array.length;
+        int length = TransmitShapeGroupUtility.set_array.length;
 
         for (int i = 0; i < length; i++) {
 
             connector = ShapeUtility.convert_connector_status
-                    (TransmitRectangleUtility.set_array[i].connector);
+                    (TransmitShapeGroupUtility.set_array[i].connector);
 
             if (i == length - 1) {
                 connector = false;
             }
 
-            String complete_text = TransmitRectangleUtility.set_array[i].shape_text;
+            String complete_text = TransmitShapeGroupUtility.set_array[i].shape_text;
             String summary_text = get_summary_string(complete_text);
 
             /*horizontal_deviation = draw_single_rectangle(canvas, base_width, base_height,
@@ -168,7 +166,7 @@ public class ShapesArragementView extends AppCompatTextView {
                     connector);*/
 
             int shape_type = SelectShapeUtility.string_to_shape_type
-                                (TransmitRectangleUtility.set_array[i].shape_type);
+                                (TransmitShapeGroupUtility.set_array[i].shape_type);
 
             horizontal_deviation = draw_single_shape(shape_type,
                     canvas, base_width, base_height,

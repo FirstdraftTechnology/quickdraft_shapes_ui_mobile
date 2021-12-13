@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 import org.firstdraft.draw_transmit_shapes.R;
 
@@ -30,19 +30,19 @@ public class ShapeListAdapter extends BaseAdapter
     public int getCount()
     {
 
-        if(TransmitRectangleUtility.set_array == null)
+        if(TransmitShapeGroupUtility.set_array == null)
         {
             return 0;
         }
 
-        return TransmitRectangleUtility.set_array.length;
+        return TransmitShapeGroupUtility.set_array.length;
 
     }
 
     public Object getItem(int position)
     {
 
-        return TransmitRectangleUtility.set_array[position].shape_text;
+        return TransmitShapeGroupUtility.set_array[position].shape_text;
 
     }
 
@@ -91,7 +91,7 @@ public class ShapeListAdapter extends BaseAdapter
             public void onClick(View view)
             {
 
-                TransmitRectangleUtility.launch_edit_shape_element
+                TransmitShapeGroupUtility.launch_edit_shape_element
                         (ShapeListUtility.sla_instance, context, position);
 
             }

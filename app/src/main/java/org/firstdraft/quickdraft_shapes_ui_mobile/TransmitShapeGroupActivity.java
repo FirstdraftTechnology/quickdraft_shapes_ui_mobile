@@ -15,7 +15,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class TransmitRectangleActivity extends AppCompatActivity {
+public class TransmitShapeGroupActivity extends AppCompatActivity {
 
     String SERVER_IP;
     String DJANGO_PORT;
@@ -43,18 +43,18 @@ public class TransmitRectangleActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_shape_list);
 
-        /*Log.d("SHAPES","Width - " + TransmitRectangleUtility.base_width);
-        Log.d("SHAPES","Height - " + TransmitRectangleUtility.base_height);
-        Log.d("SHAPES","Deviation - " + TransmitRectangleUtility.horizontal_deviation);
+        /*Log.d("SHAPES","Width - " + TransmitShapeGroupUtility.base_width);
+        Log.d("SHAPES","Height - " + TransmitShapeGroupUtility.base_height);
+        Log.d("SHAPES","Deviation - " + TransmitShapeGroupUtility.horizontal_deviation);
 
-        Log.d("SHAPES","Text - " + TransmitRectangleUtility.shape_text);*/
+        Log.d("SHAPES","Text - " + TransmitShapeGroupUtility.shape_text);*/
 
-        String xml = TransmitRectangleUtility.get_xml();
-        Log.d("SHAPES","XML - " + TransmitRectangleUtility.get_xml());
+        String xml = TransmitShapeGroupUtility.get_xml();
+        Log.d("SHAPES","XML - " + TransmitShapeGroupUtility.get_xml());
 
         file_content = xml;
         //user_name = "shape_master";
-        user_name = TransmitRectangleUtility.user_name;
+        user_name = TransmitShapeGroupUtility.user_name;
 
         launch_sendImport_background_task();
     }
@@ -65,7 +65,7 @@ public class TransmitRectangleActivity extends AppCompatActivity {
         DJANGO_PORT = "8000";
 
         //file_name = "pretty_shape_file_final.docx";
-        file_name_office = TransmitRectangleUtility.file_name;
+        file_name_office = TransmitShapeGroupUtility.file_name;
 
         this.request_url = "http://" + SERVER_IP  + ":" + DJANGO_PORT
                 + "/document_with_shape/";
@@ -84,7 +84,7 @@ public class TransmitRectangleActivity extends AppCompatActivity {
 
         //user_name = "shape_master";
         //file_name = "pretty_shape_file_final.docx";
-        //file_name_xml = TransmitRectangleUtility.file_name;
+        //file_name_xml = TransmitShapeGroupUtility.file_name;
 
         this.request_url = "http://" + SERVER_IP  + ":" + DJANGO_PORT
                 + "/document_with_shape/";
@@ -258,7 +258,7 @@ public class TransmitRectangleActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String file_url) {
             //pDialog.dismiss();
-            //TransmitRectangleActivity.super.finish();
+            //TransmitShapeGroupActivity.super.finish();
 
             launch_notifyShape_background_task();
         }
@@ -391,7 +391,7 @@ public class TransmitRectangleActivity extends AppCompatActivity {
         protected void onPostExecute(String file_url) {
 
             pDialog.dismiss();
-            TransmitRectangleActivity.super.finish();
+            TransmitShapeGroupActivity.super.finish();
 
         }
     }
