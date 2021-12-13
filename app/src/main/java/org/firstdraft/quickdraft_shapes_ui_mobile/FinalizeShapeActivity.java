@@ -272,7 +272,10 @@ public class FinalizeShapeActivity extends AppCompatActivity {
                         (float)RectangleView.base_width_current /
                                 (float)RectangleView.RECTANGLE_BASE_WIDTH;*/
 
-                 set_scaling_factor();
+                connector_string = ShapeUtility.get_connector_status(connector_checkbox);
+                CurrentShapeElement.connector = connector_string;
+
+                set_scaling_factor();
 
                 if(TransmitRectangleUtility.edit_operation == false)
                 {
