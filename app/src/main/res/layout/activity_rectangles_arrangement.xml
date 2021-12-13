@@ -7,10 +7,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="100"
-        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity">
+        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementActivity">
 
-    <!--org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArragementView
-        android:id="@+id/myView"
+    <!--org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArragementView     android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="50"
@@ -27,7 +26,7 @@
         android:orientation="vertical"
         tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
-    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView
+    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.ShapeArrangementMobileView
         android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

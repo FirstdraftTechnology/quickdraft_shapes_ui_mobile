@@ -256,7 +256,7 @@ public class FinalizeShapeActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(context, RectanglesArrangementActivity.class);
+                Intent intent = new Intent(context, ShapesArrangementActivity.class);
                 startActivity(intent);
 
             }

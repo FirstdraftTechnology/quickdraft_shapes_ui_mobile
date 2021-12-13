@@ -11,8 +11,7 @@ import android.widget.ListView;
 
 import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity;
@@ -105,7 +104,7 @@ public class ShapeListActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(context, RectanglesArrangementActivity.class);
+                Intent intent = new Intent(context, ShapesArrangementActivity.class);
                 startActivity(intent);
 
                 ShapeListActivity.super.finish();
