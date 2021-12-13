@@ -1,4 +1,4 @@
-package org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile;
+package org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile;
 
 import android.content.Context;
 import android.graphics.Canvas;

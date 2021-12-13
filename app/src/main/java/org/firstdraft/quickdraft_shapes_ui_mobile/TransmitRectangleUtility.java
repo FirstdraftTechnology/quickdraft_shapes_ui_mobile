@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.util.Xml;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.ShapeArrangementUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementUtility;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 import org.xmlpull.v1.XmlSerializer;
 

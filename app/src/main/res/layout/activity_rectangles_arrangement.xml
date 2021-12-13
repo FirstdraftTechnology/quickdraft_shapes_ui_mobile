@@ -26,7 +26,7 @@
         android:orientation="vertical"
         tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
-    <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.ShapeArrangementMobileView
+    <org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementMobileView
         android:id="@+id/myView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

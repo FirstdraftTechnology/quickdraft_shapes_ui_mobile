@@ -11,8 +11,8 @@ import android.widget.Button;
 
 import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.ShapeArrangementMobileView;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.ShapeArrangementUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementMobileView;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementUtility;
 
 public class ShapesArrangementActivity extends AppCompatActivity {
 
