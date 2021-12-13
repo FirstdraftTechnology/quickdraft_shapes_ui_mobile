@@ -11,12 +11,11 @@ import android.widget.ListView;
 
 import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupActivity;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 import java.util.ArrayList;
 
@@ -32,7 +31,7 @@ public class ShapeListActivity extends AppCompatActivity {
         ShapeListUtility.sla_instance = this;
         ArrayList<ShapeElementModel> shapeList_as_arrayList =
                 ShapeListUtility.convert_elementArray_to_arrayList(
-                        TransmitRectangleUtility.set_array);
+                        TransmitShapeGroupUtility.set_array);
 
         adapter = new ShapeListAdapter( shapeList_as_arrayList ,
                 this);
@@ -58,7 +57,7 @@ public class ShapeListActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(context, TransmitRectangleActivity.class);
+                Intent intent = new Intent(context, TransmitShapeGroupActivity.class);
                 startActivity(intent);
 
             }
@@ -73,7 +72,7 @@ public class ShapeListActivity extends AppCompatActivity {
                         (float) RectangleView.base_width_current /
                                 (float)RectangleView.RECTANGLE_BASE_WIDTH;*/
 
-                //TransmitRectangleUtility.add_shape_element();
+                //TransmitShapeGroupUtility.add_shape_element();
 
                 /*RectangleView.s = "";
                 RectangleView.connector_output = "";
@@ -105,7 +104,7 @@ public class ShapeListActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(context, RectanglesArrangementActivity.class);
+                Intent intent = new Intent(context, ShapesArrangementActivity.class);
                 startActivity(intent);
 
                 ShapeListActivity.super.finish();

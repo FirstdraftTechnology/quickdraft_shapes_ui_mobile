@@ -11,14 +11,13 @@ import android.widget.Button;
 
 import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementParams;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementMobileView;
+import org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementMobile.ShapeArrangementUtility;
 
-public class RectanglesArrangementActivity extends AppCompatActivity {
+public class ShapesArrangementActivity extends AppCompatActivity {
 
-    //RectanglesArragementView arragement_view;
-    RectangleArrangementMobileView arragement_view;
+    //ShapesArragementView arragement_view;
+    ShapeArrangementMobileView arragement_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
     {
         Context context = this;
 
-        arragement_view = new RectangleArrangementMobileView(context);
+        arragement_view = new ShapeArrangementMobileView(context);
         arragement_view.setBackgroundColor(Color.WHITE);
 
         Button commit_arrangement = (Button)findViewById(R.id.CommitArrangement);
@@ -42,12 +41,12 @@ public class RectanglesArrangementActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                RectangleArrangementUtility.after_committing_arrangement();
+                ShapeArrangementUtility.after_committing_arrangement();
 
                 Intent intent = new Intent(context, ShapeListActivity.class);
                 startActivity(intent);
 
-                RectanglesArrangementActivity.super.finish();
+                ShapesArrangementActivity.super.finish();
 
             }
         });

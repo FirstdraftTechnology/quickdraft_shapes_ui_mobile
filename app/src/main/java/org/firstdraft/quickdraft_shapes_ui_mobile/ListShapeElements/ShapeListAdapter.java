@@ -6,9 +6,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 import org.firstdraft.draw_transmit_shapes.R;
 
@@ -29,19 +30,19 @@ public class ShapeListAdapter extends BaseAdapter
     public int getCount()
     {
 
-        if(TransmitRectangleUtility.set_array == null)
+        if(TransmitShapeGroupUtility.set_array == null)
         {
             return 0;
         }
 
-        return TransmitRectangleUtility.set_array.length;
+        return TransmitShapeGroupUtility.set_array.length;
 
     }
 
     public Object getItem(int position)
     {
 
-        return TransmitRectangleUtility.set_array[position].shape_text;
+        return TransmitShapeGroupUtility.set_array[position].shape_text;
 
     }
 
@@ -61,6 +62,9 @@ public class ShapeListAdapter extends BaseAdapter
             convertView = inflater.inflate(R.layout.shape_element_layout,
                     null, true);
 
+            holder.shape_element_icon =
+                    (ImageView) convertView.findViewById(R.id.shape_image_element);
+
             holder.shape_scale = (TextView) convertView.findViewById(R.id.shape_element_scale);
             holder.shape_text = (TextView) convertView.findViewById(R.id.shape_element_text);
 
@@ -74,6 +78,9 @@ public class ShapeListAdapter extends BaseAdapter
         ShapeElementModel current_element = shape_model_array
                 .get(position);
 
+        ShapeListUtility.set_element_icon(current_element.getShape_element_type(),
+                holder.shape_element_icon);
+
         holder.shape_scale.setText(current_element.getShape_element_scale());
         holder.shape_text.setText(current_element.getShape_element_text());
 
@@ -83,25 +90,8 @@ public class ShapeListAdapter extends BaseAdapter
             @Override
             public void onClick(View view)
             {
-                /*CurrentShapeElement.scaling_factor =
-                        (float) RectangleView.base_width_current /
-                                (float)RectangleView.RECTANGLE_BASE_WIDTH;
 
-
-                RectangleView.s = "";
-                RectangleView.connector = "";
-                RectangleView.multiplication_factor = (float)1.0;
-
-                RectangleView.base_width_current = RectangleView.RECTANGLE_BASE_WIDTH;
-                RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
-                RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
-
-                FinalizeShapeActivity.mScaleFactor = (float)1.0;
-
-                Intent intent = new Intent(context, FinalizeShapeActivity.class);
-                ShapeListUtility.sla_instance.startActivity(intent);*/
-
-                TransmitRectangleUtility.launch_edit_shape_element
+                TransmitShapeGroupUtility.launch_edit_shape_element
                         (ShapeListUtility.sla_instance, context, position);
 
             }
@@ -112,6 +102,8 @@ public class ShapeListAdapter extends BaseAdapter
     }
 
     private class ViewHolder {
+        protected ImageView shape_element_icon;
+
         protected TextView shape_scale;
         protected TextView shape_text;
 

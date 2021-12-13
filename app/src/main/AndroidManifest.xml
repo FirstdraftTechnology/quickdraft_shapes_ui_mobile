@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeActivity"></activity>
         <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity" />
-        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementActivity" />
+        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.ShapesArrangementActivity" />
         <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.UserFileNameActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,7 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleActivity" />
+        <activity android:name="org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupActivity" />
         <activity
             android:name="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity"
             android:windowSoftInputMode="adjustResize" />

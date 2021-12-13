@@ -1,7 +1,5 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
-
 public class SelectShapeUtility
 {
     public static final int SHAPE_RECTANGLE = 0;

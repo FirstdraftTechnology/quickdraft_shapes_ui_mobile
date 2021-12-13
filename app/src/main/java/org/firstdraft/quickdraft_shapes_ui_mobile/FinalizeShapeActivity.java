@@ -16,6 +16,7 @@ import android.widget.TextView;
 import org.firstdraft.draw_transmit_shapes.R;
 import org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements.ShapeListActivity;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.EllipseView;
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.RectangleView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeUtility;
 
 public class FinalizeShapeActivity extends AppCompatActivity {
@@ -216,9 +217,9 @@ public class FinalizeShapeActivity extends AppCompatActivity {
                 set_someMore_params();
 
                 //Adding final shape
-                //TransmitRectangleUtility.add_shape_element();
+                //TransmitShapeGroupUtility.add_shape_element();
 
-                Intent intent = new Intent(context, TransmitRectangleActivity.class);
+                Intent intent = new Intent(context, TransmitShapeGroupActivity.class);
                 startActivity(intent);
 
             }
@@ -233,7 +234,7 @@ public class FinalizeShapeActivity extends AppCompatActivity {
                         (float)RectangleView.base_width_current /
                                 (float)RectangleView.RECTANGLE_BASE_WIDTH;
 
-                TransmitRectangleUtility.add_shape_element();
+                TransmitShapeGroupUtility.add_shape_element();
 
                 RectangleView.s = "";
                 RectangleView.connector = "";
@@ -256,7 +257,7 @@ public class FinalizeShapeActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                Intent intent = new Intent(context, RectanglesArrangementActivity.class);
+                Intent intent = new Intent(context, ShapesArrangementActivity.class);
                 startActivity(intent);
 
             }
@@ -277,9 +278,9 @@ public class FinalizeShapeActivity extends AppCompatActivity {
 
                 set_scaling_factor();
 
-                if(TransmitRectangleUtility.edit_operation == false)
+                if(TransmitShapeGroupUtility.edit_operation == false)
                 {
-                    /*if(TransmitRectangleUtility.set_count % 2 == 0)
+                    /*if(TransmitShapeGroupUtility.set_count % 2 == 0)
                     {
                         shape_type = SHAPE_ELLIPSE;
                     }
@@ -288,12 +289,12 @@ public class FinalizeShapeActivity extends AppCompatActivity {
                         shape_type = SHAPE_RECTANGLE;
                     }*/
 
-                    TransmitRectangleUtility.add_shape_element(SelectShapeUtility.shape_type);
+                    TransmitShapeGroupUtility.add_shape_element(SelectShapeUtility.shape_type);
                 }
                 else
                 {
-                    TransmitRectangleUtility.edit_shape_element_commit
-                            (TransmitRectangleUtility.edit_position);
+                    TransmitShapeGroupUtility.edit_shape_element_commit
+                            (TransmitShapeGroupUtility.edit_position);
                 }
 
                 /*RectangleView.s = "";
@@ -320,8 +321,8 @@ public class FinalizeShapeActivity extends AppCompatActivity {
 
     private void set_someMore_params()
     {
-            //TransmitRectangleUtility.user_name = user_name_view.getText().toString();
-            //TransmitRectangleUtility.file_name = file_name_view.getText().toString();
+            //TransmitShapeGroupUtility.user_name = user_name_view.getText().toString();
+            //TransmitShapeGroupUtility.file_name = file_name_view.getText().toString();
     }
     @Override
     public boolean onTouchEvent(MotionEvent motionEvent) {

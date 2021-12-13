@@ -3,6 +3,7 @@ package org.firstdraft.quickdraft_shapes_ui_mobile;
 import android.widget.CheckBox;
 
 import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.EllipseView;
+import org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.RectangleView;
 
 public class ShapeUtility {
 

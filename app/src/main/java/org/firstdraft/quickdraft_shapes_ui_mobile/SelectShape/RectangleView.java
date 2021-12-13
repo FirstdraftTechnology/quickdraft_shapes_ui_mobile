@@ -1,4 +1,4 @@
-package org.firstdraft.quickdraft_shapes_ui_mobile;
+package org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
@@ -9,6 +9,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.EditText;
+
+import org.firstdraft.quickdraft_shapes_ui_mobile.CurrentShapeElement;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 public class RectangleView
         extends AppCompatTextView
@@ -78,11 +81,11 @@ public class RectangleView
         CurrentShapeElement.shape_text = s;
         CurrentShapeElement.connector = connector_output;
 
-        /*TransmitRectangleUtility.add_shape_element(RECTANGLE_BASE_WIDTH, RECTANGLE_BASE_HEIGHT,
+        /*TransmitShapeGroupUtility.add_shape_element(RECTANGLE_BASE_WIDTH, RECTANGLE_BASE_HEIGHT,
                                                     text_width, s);*/
 
-        TransmitRectangleUtility.canvas_width = this.getWidth();
-        TransmitRectangleUtility.canvas_height = this.getHeight();
+        TransmitShapeGroupUtility.canvas_width = this.getWidth();
+        TransmitShapeGroupUtility.canvas_height = this.getHeight();
 
     }
 

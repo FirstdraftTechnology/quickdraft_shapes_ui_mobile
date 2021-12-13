@@ -11,8 +11,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import org.firstdraft.quickdraft_shapes_ui_mobile.CurrentShapeElement;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
-import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
+import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitShapeGroupUtility;
 
 public class EllipseView extends AppCompatTextView
 {
@@ -81,8 +80,8 @@ public class EllipseView extends AppCompatTextView
         CurrentShapeElement.shape_text = s;
         CurrentShapeElement.connector = connector_output;
 
-        TransmitRectangleUtility.canvas_width = this.getWidth();
-        TransmitRectangleUtility.canvas_height = this.getHeight();
+        TransmitShapeGroupUtility.canvas_width = this.getWidth();
+        TransmitShapeGroupUtility.canvas_height = this.getHeight();
 
     }
 

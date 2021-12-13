@@ -41,10 +41,10 @@ public class UserFileNameActivity extends AppCompatActivity {
             @Override
             public void onClick(View arg0) {
 
-                TransmitRectangleUtility.user_name = user_name_view.getText().toString();
-                TransmitRectangleUtility.file_name = file_name_view.getText().toString();
+                TransmitShapeGroupUtility.user_name = user_name_view.getText().toString();
+                TransmitShapeGroupUtility.file_name = file_name_view.getText().toString();
 
-                TransmitRectangleUtility.reset_shape_group();
+                TransmitShapeGroupUtility.reset_shape_group();
 
                 /*Intent intent = new Intent(context, FinalizeShapeActivity.class);
                 startActivity(intent);*/
