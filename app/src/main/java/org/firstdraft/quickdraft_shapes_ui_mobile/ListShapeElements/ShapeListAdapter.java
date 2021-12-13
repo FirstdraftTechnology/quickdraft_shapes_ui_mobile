@@ -1,18 +1,13 @@
 package org.firstdraft.quickdraft_shapes_ui_mobile.ListShapeElements;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import org.firstdraft.quickdraft_shapes_ui_mobile.CurrentShapeElement;
-import org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity;
-import org.firstdraft.quickdraft_shapes_ui_mobile.RectangleView;
 import org.firstdraft.quickdraft_shapes_ui_mobile.TransmitRectangleUtility;
 
 import org.firstdraft.draw_transmit_shapes.R;
@@ -101,9 +96,9 @@ public class ShapeListAdapter extends BaseAdapter
                 RectangleView.base_height_current = RectangleView.RECTANGLE_BASE_HEIGHT;
                 RectangleView.text_size_base = RectangleView.TEXT_BASE_SIZE;
 
-                FinalizeRectangleActivity.mScaleFactor = (float)1.0;
+                FinalizeShapeActivity.mScaleFactor = (float)1.0;
 
-                Intent intent = new Intent(context, FinalizeRectangleActivity.class);
+                Intent intent = new Intent(context, FinalizeShapeActivity.class);
                 ShapeListUtility.sla_instance.startActivity(intent);*/
 
                 TransmitRectangleUtility.launch_edit_shape_element

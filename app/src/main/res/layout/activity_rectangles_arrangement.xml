@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="30"
         android:orientation="vertical"
-        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
+        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
     <org.firstdraft.quickdraft_shapes_ui_mobile.RectanglesArrangementMobile.RectangleArrangementMobileView
         android:id="@+id/myView"
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="70"
         android:orientation="vertical"
-        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeRectangleActivity">
+        tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.FinalizeShapeActivity">
 
 
     <!--Button

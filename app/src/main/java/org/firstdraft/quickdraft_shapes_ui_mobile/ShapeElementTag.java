@@ -13,6 +13,7 @@ public class ShapeElementTag {
     public String shape_text;
 
     public String connector = "true";
+    public String shape_type = "rectangle";//default
     public float scaling_factor = (float)1.0;
 
     void create_shape_element(XmlSerializer serializer)
@@ -31,6 +32,8 @@ public class ShapeElementTag {
 
         serializer.attribute("", "connector",
                 connector);
+        serializer.attribute("", "shape_type",
+                shape_type);
         serializer.attribute("", "scaling_factor",
                 Float.toString(scaling_factor));
 

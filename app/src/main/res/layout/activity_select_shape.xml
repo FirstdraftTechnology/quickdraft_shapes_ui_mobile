@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.firstdraft.quickdraft_shapes_ui_mobile.SelectShape.SelectShapeActivity">
+
+    <RadioGroup
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroupShape">
+
+        <RadioButton
+            android:id="@+id/radioRectangle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="  Rectangle"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:textSize="20dp" />
+
+        <RadioButton
+            android:id="@+id/radioEllipse"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="  Ellipse"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:textSize="20dp" />
+
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Commit Selection"
+        android:id="@+id/CommitSelection"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
