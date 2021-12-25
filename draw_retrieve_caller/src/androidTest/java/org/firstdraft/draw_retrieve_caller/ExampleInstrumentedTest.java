@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("org.firstdraft.draw_retrieve_caller", appContext.getPackageName());
+        assertEquals("org.firstdraft.Draw_Retrieve_Caller_Activity", appContext.getPackageName());
     }
 }

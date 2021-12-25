@@ -7,8 +7,8 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "org.firstdraft.draw_retrieve_caller"
-        minSdkVersion 17
+        applicationId "org.firstdraft.Draw_Retrieve_Caller_Activity"
+        minSdkVersion 21
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"

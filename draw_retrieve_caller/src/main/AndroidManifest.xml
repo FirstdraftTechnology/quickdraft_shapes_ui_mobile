@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Draw_transmit_shapes">
-        <activity android:name=".draw_retrieve_caller">
+        <activity android:name=".Draw_Retrieve_Caller_Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
