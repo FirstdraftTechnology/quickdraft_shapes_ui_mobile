@@ -1,5 +1,5 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
 }
 
 android {
@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "org.firstdraft.draw_transmit_shapes"
+        //applicationId "org.firstdraft.draw_transmit_shapes"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
