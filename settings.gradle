@@ -1,2 +1,2 @@
-include ':app'
+include ':draw_retrieve_shapes'
 rootProject.name = "draw_transmit_shapes"
