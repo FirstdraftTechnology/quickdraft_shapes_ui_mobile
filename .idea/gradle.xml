@@ -11,6 +11,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/draw_retrieve_caller" />
             <option value="$PROJECT_DIR$/draw_retrieve_shapes" />
           </set>
         </option>
