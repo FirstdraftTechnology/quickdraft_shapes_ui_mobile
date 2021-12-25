@@ -187,10 +187,11 @@ public class TransmitShapeGroupUtility {
             serializer.setOutput(writer);
             serializer.startDocument("UTF-8", true);
 
-            serializer.startTag("", "root");
-            serializer.startTag("", "shape");
-
+            serializer.startTag("", "file");
             serializer.attribute("", "file_name", file_name);
+
+            serializer.startTag("", "shape");
+            //serializer.attribute("", "file_name", file_name);
             serializer.attribute("", "canvas_width",
                                     Integer.toString(TransmitShapeGroupUtility.canvas_width));
             serializer.attribute("", "canvas_height",
@@ -204,7 +205,7 @@ public class TransmitShapeGroupUtility {
             create_shape_element_wrapper(serializer);
 
             serializer.endTag("", "shape");
-            serializer.endTag("", "root");
+            serializer.endTag("", "file");
 
             serializer.endDocument();
 
